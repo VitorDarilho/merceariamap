@@ -63,27 +63,17 @@
 
         <div class="col-md-4">
             <div class="form-group">
-                <label for="id_cliente_segmento">Segmento *</label>
-                <select class="form-control" name="id_cliente_segmento" id="id_cliente_segmento">
-                    <option value="selecione">Selecione</option>
-                    <?php foreach ($clientesSegmentos as $clienteSegmento): ?>
-                        <?php if (isset($cliente->id) && $cliente->id_cliente_segmento == $clienteSegmento->id): ?>
-                            <option value="<?php echo $cliente->id_cliente_segmento; ?>"
-                                    selected="selected"><?php echo $clienteSegmento->descricao; ?>
-                            </option>
-                        <?php else: ?>
-                            <option value="<?php echo $clienteSegmento->id; ?>">
+                <label for="id_cliente_segmento">CNF*</label>
+                <input type="text" class="form-control" name="cnpj" id="cnpj" placeholder="Digite o CNPJ"
+                   value="<?php echo $clienteSegmento->id; ?>">
                                 <?php echo $clienteSegmento->descricao; ?>
-                            </option>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
-                </select>
+                        
             </div>
         </div>
 
         <div class="col-md-4 elemento-quando-for-pessoa-juridica">
             <div class="form-group">
-                <label for="cnpj">CNPJ * <span class="label-cnpj"></span></label>
+                <label for="cnpj">CNPJ *</span></label>
                 <input type="text" class="form-control" name="cnpj" id="cnpj" placeholder="Digite o CNPJ"
                        value="<?php echo isset($cliente->id) ? $cliente->cnpj : '' ?>"
                        onchange="verificaSeCnpjExiste(this, <?php echo isset($cliente->id) ? $cliente->id : false; ?>)">

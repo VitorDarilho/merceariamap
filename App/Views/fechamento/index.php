@@ -1,29 +1,9 @@
-<head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
+<div class="row">
 
-<body >
-    <nav>
-        <div class="hamburger-menu">
-            <input id="menu__toggle" type="checkbox" />
-            <label class="menu__btn" for="menu__toggle">
-                <span></span>
-            </label>
-
-            <ul class="menu__box">
-
-
-                <li><a class="menu__item" href="#">Mercadorias</a></li>
-                <li><a class="menu__item" href="#">Abertura de caixa</a></li>
-                <li><a class="menu__item" href="#">Fechamento de Caixa</a></li>
-                <li><a class="menu__item" href="#">Estoque</a></li>
-                <li><a class="menu__item" href="#">Voltar</a></li>
-            </ul>
+    <div class="card col-lg-12 content-div">
+        <div class="card-body">
+            <h5 class="card-title"><i class="fas fa-shopping-basket"></i> Fechamento de Caixa</h5>
         </div>
-    </nav>
-</body>
-<footer>
-
 </footer>
 <!DOCTYPE html>
 <html>
@@ -63,10 +43,6 @@ width: 150px;
 		<div class="form-container log-in-container">
 			<form action="#">
 
-				<div class="social-container">
-					<font size="5">Fechamento de Caixa</font>
-				</div>
-
 				<input type="Nme Completo" placeholder="Nome Completo" autocomplete="off"/>
 				<input name="Fornecedor" class="input" <input id="date" type="date">
 
@@ -82,19 +58,9 @@ width: 150px;
 		<div class="overlay-container">
 			<div class="overlay">
 				<div class="overlay-panel overlay-right">
-<img src="imagem2.png" />
 
-<style>
-.imagem2{
-    transition: all 0.5s;
-    cursor: pointer;
-}
 
-.imagem2:hover{
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);
-}
-</style>
+
 
 
 

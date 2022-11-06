@@ -26,8 +26,8 @@ use System\Session\Session;
                     <p>Vendas <small style="float:right;opacity:0.50">Padrão</small></p>
                 </a>
             <?php elseif ($configPdv->id_tipo_pdv == 2): ?>
-                <a href="<?php echo BASEURL; ?>/pdvDiferencial"
-                   class="<?php currentRouteFromMenu('pdvDiferencial', 'pdvBorder'); ?>">
+                <a href="<?php echo BASEURL; ?>/vendas"
+                   class="<?php currentRouteFromMenu('vendas', 'pdvBorder'); ?>">
                     <i class="fas fa-cart-arrow-down"></i>
                     <p>Vendas <small style="float:right;opacity:0.50"></small></p>
                 </a>
@@ -39,12 +39,24 @@ use System\Session\Session;
                 <a href="<?php echo BASEURL; ?>/produto"
                    class="<?php currentRouteFromMenu('produto', 'produtoBorder'); ?>">
                     <i class="fas fa-box-open"></i>
-                    <p>Estoque</p>
+                    <p>Produtos</p>
                 </a>
             </li>
         <?php endif; ?>
+        
+        <?php if (Session::get('idPerfil') != ConfigPerfil::vendedor()): ?>
+            <li class="">
+            <a href="<?php echo BASEURL; ?>/estoque"
+                   class="<?php currentRouteFromMenu('estoque'); ?>">
+                    <i class="fas fa-box-open"></i>
+                    <p>Estoque</p>
+                </a>
+            </li>
+            
 
 
+
+        <?php endif; ?>
         <li class="">
             <a href="<?php echo BASEURL; ?>/cliente"
                class="<?php currentRouteFromMenu('cliente', 'clienteBorder'); ?>

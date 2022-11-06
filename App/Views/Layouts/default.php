@@ -46,20 +46,19 @@ $configPdv = $configPdv->configPdv(Session::get('idEmpresa'));
 
     <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/select2.css">
 
-    <meta name="author" content="ZigMoney">
-    <meta property="og:url" content="https://github.com/valdiney/zig/">
+   
 
     <?php if (getenv('APPLICATION_NAME')): ?>
         <title><?php echo getenv('APPLICATION_NAME'); ?></title>
         <meta property="og:title" content="<?php echo getenv('APPLICATION_NAME'); ?>">
         <meta property="og:site_name" content="<?php echo getenv('APPLICATION_NAME'); ?>">
     <?php else: ?>
-        <meta property="og:title" content="ZigMoney">
-        <meta property="og:site_name" content="ZigMoney">
+        <meta property="og:title" content="">
+        <meta property="og:site_name" content="">
     <?php endif; ?>
 
-    <meta property="og:description" content="ZigMoney">
-    <meta property="og:image" content="https://raw.githubusercontent.com/valdiney/zig/master/prints/dashboard.png">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="800">
     <meta property="og:image:height" content="600">
@@ -128,7 +127,7 @@ $configPdv = $configPdv->configPdv(Session::get('idEmpresa'));
 
                 </div>
             </a>
-            <a href="<?php echo BASEURL; ?>/pdvDiferencial" class="simple-text logo-normal">
+            <a href="<?php echo BASEURL; ?>/vendas" class="simple-text logo-normal">
           <span style="color:#000000;">&nbsp;&nbsp;&nbsp;
             <?php if (getenv('APPLICATION_NAME')): ?>
                 <?php echo getenv('APPLICATION_NAME'); ?>
@@ -204,11 +203,7 @@ $configPdv = $configPdv->configPdv(Session::get('idEmpresa'));
                                     </a>
                                 <?php endif; ?>
 
-                                <?php if (Session::get('idPerfil') != ConfigPerfil::vendedor()): ?>
-                                    <a class="dropdown-item" href="<?php echo BASEURL; ?>/configuracao">
-                                        <i class="fas fa-cogs"></i> Configurações
-                                    </a>
-                                <?php endif; ?>
+                               
 
                                 <?php if (Session::get('idPerfil') != ConfigPerfil::vendedor()): ?>
                                     <a class="dropdown-item" href="<?php echo BASEURL; ?>/logs">

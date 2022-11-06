@@ -303,7 +303,7 @@
                             <th>Dinheiro</th>
                             <th>Crédito</th>
                             <th>Débito</th>
-                            
+                        
                             <th>Pix</th>
                         </tr>
                         </thead>

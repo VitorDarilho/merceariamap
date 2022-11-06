@@ -51,6 +51,22 @@
             </div>
         </div>
 
+        <div class="col-md-2">
+            <div class="form-group">
+                <label for="preco">Quantidade *</label>
+                <input type="number" class="form-control" name="quantidade" id="quantidade" placeholder="Quantidade"
+                       value="<?php echo isset($produto->quantidade) ? $produto->quantidade : '' ?>">
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="preco">Data de Validade*</label>
+                <input type="date" class="form-control" name="data_validade" id="data_validade" placeholder="Data Validade"
+                       value="<?php echo isset($produto->data_validade) ? date('Y-m-d', strtotime($produto->data_validade)) : '' ?>">
+            </div>
+        </div>
+
         <div class="col-md-4">
             <div class="form-group">
                 <label for="imagem">Escolher Imagem do Produto</label>

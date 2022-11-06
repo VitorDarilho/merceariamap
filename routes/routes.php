@@ -55,7 +55,7 @@ $route->get('pdvPadrao', 'PdvPadraoController@index');
 $route->post('pdvPadrao/save', 'PdvPadraoController@save');
 
 # ----- PdvDiferencialController  --------------------------------
-$route->get('pdvDiferencial', 'PdvDiferencialController@index');
+$route->get('vendas', 'PdvDiferencialController@index');
 $route->get('pdvDiferencial/colocarProdutosNaMesa/{idProduto}', 'PdvDiferencialController@colocarProdutosNaMesa');
 $route->get('pdvDiferencial/obterProdutosDaMesa/{posicaoProduto?}', 'PdvDiferencialController@obterProdutosDaMesa');
 $route->get('pesquisarProdutoPorNome/{nome?}', 'PdvDiferencialController@pesquisarProdutoPorNome');
@@ -120,6 +120,16 @@ $route->post('empresa/save', 'EmpresaController@save');
 $route->post('empresa/update', 'EmpresaController@update');
 $route->get('empresa/modalFormulario/{idEmpresa?}', 'EmpresaController@modalFormulario');
 $route->get('empresa/verificaSeEmailExiste/{email}/{idEmpresa?}', 'EmpresaController@verificaSeEmailExiste');
+
+# ----- EstoqueController --------------------------------
+$route->get('estoque','EstoqueController@index');
+
+# ----- AberturaController --------------------------------
+$route->get('abertura','AberturaController@index');
+
+#----- FechamentoController --------------------------------
+$route->get('fechamento','FechamentoController@index');
+
 
 # TESTE
 $route->get('pwa/login', 'Api\InicioPwaController@index');

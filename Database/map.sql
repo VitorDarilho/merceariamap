@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02-Nov-2022 às 00:21
--- Versão do servidor: 10.4.25-MariaDB
--- versão do PHP: 7.4.30
+-- Tempo de geração: 06-Nov-2022 às 13:43
+-- Versão do servidor: 10.4.22-MariaDB
+-- versão do PHP: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -48,11 +48,16 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`id`, `id_empresa`, `id_cliente_tipo`, `id_cliente_segmento`, `nome`, `email`, `cnpj`, `cpf`, `telefone`, `celular`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(2, 1, 2, 2, 'Açaí dos meus Sonhos', 'acaidosmeussonhos@gmail.com', '16.138.154/0001-84', NULL, '(71) 9873-9218', '(71) 45564-6556', '2022-11-01 22:53:56', '2022-11-01 22:53:56', NULL),
-(4, 1, 1, 4, 'Mariana Luna de Jesus', 'mariana@gmail.com', '80.006.659/1854-54', '896.811.810-64', '(71) 9873-9218', '(71) 98530-0528', '2020-05-28 21:23:59', '2020-06-10 15:33:31', NULL),
-(5, 1, 2, 3, 'Pizzaria Segue o Baile', 'pizzariasegueobaile@hotmail.com', '50.902.478/0001-081', NULL, '(71) 98739-2183', '(71)98530-0528', '2020-05-29 00:13:44', '2020-06-10 15:33:27', NULL),
-(7, 1, 2, 2, 'Limpa Cano', 'limpacano@gmail.com', '41.977.238/0001-59', NULL, '(71) 9873-9218', '(71) 45564-6556', '2020-05-31 20:25:50', '2020-06-10 16:31:34', NULL),
-(18, 1, 2, 4, 'Têxtil Sul ', 'textilsul@hotmail.com', '84.039.937/0001-60', '', '(71) 5656-5656', '(71) 54665-6566', '2020-06-10 15:35:59', '2020-06-14 13:22:36', NULL);
+(2, 1, 1, 1, 'Lara', 'larinha.itac@gmail.com', NULL, '333.333.333-33', NULL, '(38) 99928-3231', '2022-11-02 23:26:36', '2022-11-02 23:26:36', NULL),
+(4, 1, 1, 4, 'VITOR DAYREL', 'mariana@gmail.com', '', NULL, '(71) 9873-9218', '(71) 98530-0528', '2022-11-02 23:29:28', '2022-11-02 23:29:28', '2022-11-02 23:29:28'),
+(18, 1, 2, 1, 'Vitor', 'textilsul@hotmail.com', '84.039.937/0001-60', NULL, '(71) 5656-5656', '(71) 54665-6566', '2022-11-02 23:27:05', '2022-11-02 23:27:05', NULL),
+(21, 1, 1, 1, 'Cris', 'studylary@gmail.com', '', '118.377.676-45', '(38) 9999-9999', '(38) 99999-9999', '2022-11-02 23:29:12', '0000-00-00 00:00:00', NULL),
+(22, 1, 1, 1, 'jamilly', 'jamily.natiely@gmail.com', '', '353.601.537-92', '(38) 9999-2334', '(38) 98393-7971', '2022-11-02 23:34:56', '0000-00-00 00:00:00', NULL),
+(23, 1, 1, NULL, 'lara', 'larau.itac@gmail.com', NULL, '180.215.188-55', '(38) 9982-8282', '(38) 99999-2292', '2022-11-02 23:53:20', '2022-11-02 23:53:20', NULL),
+(24, 1, 1, NULL, 'juana', 'juana.ana@gmail.com', '', '418.521.925-34', '', '', '2022-11-02 23:58:20', '0000-00-00 00:00:00', NULL),
+(25, 1, 1, NULL, 'dddddd', 'ddd.aaaa@gmail.com', '18.021.518/8555-55', '211.686.453-44', '', '', '2022-11-03 00:00:20', '0000-00-00 00:00:00', NULL),
+(26, 1, 1, NULL, 'wsdfgbhjmkl', 'AZDSFGH.ASDFG@GMAIL.COM', '', '970.575.132-32', '', '(38) 99928-3231', '2022-11-03 00:08:57', '0000-00-00 00:00:00', NULL),
+(27, 1, 1, NULL, 'larateste2', 'studylari1000@gmail.com', '', '804.618.976-60', '(38) 9759-4841', '(38) 99864-5222', '2022-11-05 22:50:33', '0000-00-00 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -81,10 +86,7 @@ CREATE TABLE `clientes_enderecos` (
 
 INSERT INTO `clientes_enderecos` (`id`, `id_empresa`, `id_cliente`, `cep`, `endereco`, `bairro`, `cidade`, `estado`, `numero`, `complemento`, `created_at`, `updated_at`) VALUES
 (3, 1, 4, '41927210', '2ª travessa são benedito', 'Chapada do Rio vermelho', 'salvador', 'Bahia', 14, NULL, '2020-05-29 15:30:33', '2020-05-30 01:04:00'),
-(4, 1, 4, '41927210', '2ª travessa são benedito', 'Chapada do Rio vermelho', 'salvador', 'Bahia', 14, ' bg ', '2020-05-29 15:31:48', '2020-05-29 15:31:48'),
-(5, 1, 4, '41927210', '2ª travessa são benedito', 'Chapada do Rio vermelho', 'salvador', 'Bahia', 56, 'Casa', '2020-05-29 15:32:23', '2020-05-29 17:11:53'),
-(18, 1, 4, '41.927-210', '2ª Travessa São Benedito', 'Santa Cruz', 'Salvador', 'BA', 15, '', '2020-06-08 13:11:00', '2020-06-08 13:11:00'),
-(19, 1, 18, '41.927-210', '2ª Travessa São Benedito', 'Santa Cruz', 'Salvador', 'BA', 3, '', '2020-06-22 16:56:12', '2020-06-22 16:56:12');
+(4, 1, 4, '41927210', '2ª travessa são benedito', 'Chapada do Rio vermelho', 'salvador', 'Bahia', 14, ' bg ', '2020-05-29 15:31:48', '2020-05-29 15:31:48');
 
 -- --------------------------------------------------------
 
@@ -104,133 +106,8 @@ CREATE TABLE `clientes_segmentos` (
 --
 
 INSERT INTO `clientes_segmentos` (`id`, `descricao`, `created_at`, `updated_at`) VALUES
-(1, 'Restaurante', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(2, 'Hamburgueria', '2020-05-28 13:28:08', '2020-05-28 13:28:09'),
-(3, 'Pizzaria', '2020-05-28 13:28:52', '2020-05-28 13:28:53'),
-(4, 'Outros...', '2020-06-02 03:00:26', '2020-06-02 03:00:27'),
-(5, 'Arte e Antiguidades', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(6, 'Artigos Religiosos', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(7, 'Assinaturas e Revistas', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(8, 'Automóveis e Veículos', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(9, 'Bebês e Cia', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(10, 'Blu-Ray', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(11, 'Brindes / Materiais Promocionais', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(12, 'Brinquedos e Games', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(13, 'Casa e Decoração', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(14, 'CDs', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(15, 'Colecionáveis', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(16, 'Compras Coletivas', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(17, 'Construção e Ferramentas', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(18, 'Cosméticos e Perfumaria', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(19, 'Cursos e Educação', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(20, 'Discos de Vinil', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(21, 'DVDs', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(22, 'Eletrodomésticos', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(23, 'Eletrônicos', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(24, 'Emissoras de Rádio', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(25, 'Emissoras de Televisão', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(26, 'Empregos', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(27, 'Empresas de Telemarketing', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(28, 'Esporte e Lazer', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(29, 'Fitas K7 Gravadas', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(30, 'Flores, Cestas e Presentes', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(31, 'Fotografia', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(32, 'HD-DVD', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(33, 'Igrejas / Templos / Instituições Religiosas', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(34, 'Indústria, Comércio e Negócios', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(35, 'Infláveis Promocionais', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(36, 'Informática', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(37, 'Ingressos', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(38, 'Instrumentos Musicais', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(39, 'Joalheria', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(40, 'Lazer', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(41, 'LD', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(42, 'Livros', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(43, 'MD', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(44, 'Moda e Acessórios', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(45, 'Motéis', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(46, 'Música Digital', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(47, 'Natal', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(48, 'Negócios e Oportunidades', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(49, 'Outros Serviços', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(50, 'Outros Serviços de Avaliação', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(51, 'Papelaria e Escritório', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(52, 'Páscoa', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(53, 'Pet Shop', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(54, 'Saúde', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(55, 'Serviço Advocaticios', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(56, 'Serviço de Distribuição de Jornais / Revistas', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(57, 'Serviços Administrativos', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(58, 'Serviços Artísticos', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(59, 'Serviços de Abatedouros / Matadouros', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(60, 'Serviços de Aeroportos', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(61, 'Serviços de Agências', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(62, 'Serviços de Aluguel / Locação', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(63, 'Serviços de Armazenagem', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(64, 'Serviços de Assessorias', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(65, 'Serviços de Assistência Técnica / Instalações ', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(66, 'Serviços de Associações', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(67, 'Serviços de Bancos de Sangue', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(68, 'Serviços de Bibliotecas', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(69, 'Serviços de Cartórios', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(70, 'Serviços de Casas Lotéricas', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(71, 'Serviços de Confecções', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(72, 'Serviços de Consórcios', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(73, 'Serviços de Consultorias', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(74, 'Serviços de Cooperativas', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(75, 'Serviços de Despachante', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(76, 'Serviços de Engenharia', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(77, 'Serviços de Estacionamentos', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(78, 'Serviços de Estaleiros', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(79, 'Serviços de Exportação / Importação', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(80, 'Serviços de Geólogos', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(81, 'Serviços de joalheiros', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(82, 'Serviços de Leiloeiros', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(83, 'Serviços de limpeza', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(84, 'Serviços de Loja de Conveniência', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(85, 'Serviços de Mão de Obra', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(86, 'Serviços de Órgão Públicos', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(87, 'Serviços de Pesquisas', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(88, 'Serviços de Portos', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(89, 'Serviços de Saúde / Bem Estar', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(90, 'Serviços de Seguradoras', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(91, 'Serviços de Segurança', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(92, 'Serviços de Sinalização', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(93, 'Serviços de Sindicatos / Federações', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(94, 'Serviços de Traduções', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(95, 'Serviços de Transporte', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(96, 'Serviços de Utilidade Pública', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(97, 'Serviços em Agricultura / Pecuária / Piscicultura', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(98, 'Serviços em Alimentação', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(99, 'Serviços em Arte', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(100, 'Serviços em Cine / Foto / Som', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(101, 'Serviços em Comunicação', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(102, 'Serviços em Construção', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(103, 'Serviços em Ecologia / Meio Ambiente', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(104, 'Serviços em Eletroeletrônica / Metal Mecânica', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(105, 'Serviços em Festas / Eventos', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(106, 'Serviços em Informática', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(107, 'Serviços em Internet', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(108, 'Serviços em Jóias / Relógios / Óticas', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(109, 'Serviços em Telefonia', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(110, 'Serviços em Veículos', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(111, 'Serviços Esotéricos / Místicos', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(112, 'Serviços Financeiros', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(113, 'Serviços Funerários', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(114, 'Serviços Gerais', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(115, 'Serviços Gráficos / Editoriais', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(116, 'Serviços para Animais', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(117, 'Serviços para Deficientes', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(118, 'Serviços para Escritórios', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(119, 'Serviços para Roupas', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(120, 'Serviços Socias / Assistenciais', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(121, 'Sex Shop', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(122, 'Shopping Centers', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(123, 'Tabacaria', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(124, 'Tarifas Bancárias', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(125, 'Tarifas Telefônicas', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(126, 'Telefonia', '2022-11-01 19:53:53', '0000-00-00 00:00:00'),
-(127, 'Turismo', '2022-11-01 19:53:53', '0000-00-00 00:00:00');
+(1, '117.366.897-90', '2022-11-02 23:22:43', '0000-00-00 00:00:00'),
+(4, 'Outros...', '2020-06-02 03:00:26', '2020-06-02 03:00:27');
 
 -- --------------------------------------------------------
 
@@ -320,7 +197,15 @@ CREATE TABLE `log_acessos` (
 INSERT INTO `log_acessos` (`id`, `id_usuario`, `id_empresa`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (32, 1, 1, '2022-11-01 19:55:57', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (33, 1, 1, '2022-11-01 21:47:23', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(34, 1, 1, '2022-11-01 21:48:57', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(34, 1, 1, '2022-11-01 21:48:57', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(35, 1, 1, '2022-11-02 13:00:16', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(36, 1, 1, '2022-11-02 13:03:59', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(37, 1, 1, '2022-11-02 13:26:38', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(38, 1, 1, '2022-11-04 22:20:08', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(39, 1, 1, '2022-11-05 22:37:49', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(40, 1, 1, '2022-11-05 23:24:02', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(41, 35, 1, '2022-11-05 23:26:47', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(42, 1, 1, '2022-11-05 23:27:55', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -500,14 +385,14 @@ INSERT INTO `produtos` (`id`, `id_empresa`, `nome`, `preco`, `descricao`, `image
 (3, 1, 'Dell Vale de Uva', 18, 'Néctar de Uva Del Valle 1 Litro', 'public/imagem/produtos/1589923950.jpg', '2022-11-01 22:52:41', '2020-05-19 21:32:30', NULL, '32022'),
 (4, 1, 'Guaraná Antárctica', 3.49, '', 'public/imagem/produtos/1590197371.jpg', '2022-11-01 22:52:41', '2020-05-23 01:29:31', NULL, '42022'),
 (5, 1, 'Refrigerante zero coca-cola', 3.99, '', 'public/imagem/produtos/1590197622.jpg', '2022-11-01 22:52:41', '2020-05-23 01:33:42', NULL, '52022'),
-(6, 1, 'HAMBÚRGUER', 30, '', 'public/imagem/produtos/1590197749.jpg', '2022-11-01 22:52:41', '2020-05-23 01:35:49', NULL, '62022'),
-(7, 1, 'ESTROGONOFE', 25, '', 'public/imagem/produtos/1590197916.jpg', '2022-11-01 22:52:41', '2020-05-23 01:38:36', NULL, '72022'),
-(8, 1, 'Computador completo', 1500, '', 'public/imagem/produtos/1591662766.png', '2022-11-01 22:52:41', '2020-06-09 00:32:46', NULL, '82022'),
-(9, 1, 'Notebook Samsung ', 2580, 'Notebook Samsung Intel Core i3 4GB 1TB Tela 15,6\" Windows 10 Home ', 'public/imagem/produtos/1593041033.png', '2022-11-01 22:52:41', '2020-06-24 23:23:53', NULL, '92022'),
-(10, 1, 'HAMBÚRGUER ARTESANAL', 26, '', 'public/imagem/produtos/1592946951.png', '2022-11-01 22:52:41', '2020-06-23 21:15:51', NULL, '102022'),
-(11, 1, 'Coxinhas de Frango', 10, '', NULL, '2022-11-01 22:52:41', '2022-11-01 22:52:41', NULL, '112022'),
-(12, 1, 'Coxinhas de Frango', 10, '', NULL, '2022-11-01 22:52:55', '2022-11-01 22:52:55', NULL, '122022'),
-(13, 1, 'Coxinhas de Frango', 10, '', 'public/imagem/produtos/1667343225.jpg', '2022-11-01 22:53:45', '2022-11-01 22:53:45', NULL, '132022');
+(7, 1, 'Macarrão', 25, '', 'public/imagem/produtos/1590197916.jpg', '2022-11-02 13:27:41', '2022-11-02 13:27:41', NULL, '72022'),
+(8, 1, 'Carne vegna', 9.9, '', 'public/imagem/produtos/1591662766.jpg', '2022-11-05 22:57:05', '2022-11-02 23:14:58', NULL, '82022'),
+(9, 1, 'Arroz', 5.9, 'Arroz tipo 01', 'public/imagem/produtos/1593041033.jpg', '2022-11-05 22:59:02', '2022-11-02 13:10:46', NULL, '92022'),
+(10, 1, 'Feijão', 7.8, 'Feijão tipo 02', 'public/imagem/produtos/1592946951.jpg', '2022-11-05 23:00:42', '2022-11-02 13:11:19', NULL, '102022'),
+(11, 1, 'Coxinhas de Frango', 10, '', 'public/imagem/produtos/1667343225.jpg', '2022-11-05 23:03:48', '2022-11-01 22:52:41', NULL, '112022'),
+(14, 1, 'Soja', 24.57, 'Soja vegana', 'public/imagem/produtos/download (2).jpg', '2022-11-05 23:05:28', NULL, NULL, '12345667'),
+(15, 1, 'Banana', 49.8, 'Mt bom é vegano', 'public/imagem/produtos/1667689592.jpg', '2022-11-05 23:06:32', '2022-11-05 23:06:32', NULL, '152022'),
+(16, 1, 'Grao de Bico', 100, 'otimo para receitas veganas', 'public/imagem/produtos/1667689683.jpg', '2022-11-05 23:08:03', NULL, NULL, '182732929');
 
 -- --------------------------------------------------------
 
@@ -622,16 +507,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `id_empresa`, `nome`, `email`, `password`, `remember_token`, `remember_expire_date`, `id_sexo`, `id_perfil`, `imagem`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, 'Marcella', 'admin@admin.com', '3b5df72898847f008454f4ed60280d6bdffc890d', '8d1d73b99644e876682b3bf95581d47ba570d4fe', '2022-12-01 21:48:57', 1, 2, 'public/imagem/perfil_usuarios/1585493352.jpg', '2022-11-01 21:48:57', '2022-11-01 21:48:57', NULL),
-(2, 1, 'Renata de Jesus Lima', 'renata@hotmail.com', '3b5df72898847f008454f4ed60280d6bdffc890d', NULL, NULL, 2, 4, 'public/imagem/perfil_usuarios/1585493808.png', '2020-05-24 20:21:48', '2020-05-24 17:21:45', NULL),
-(35, 1, 'João de Jesus', 'joao@gmail.com', '3b5df72898847f008454f4ed60280d6bdffc890d', NULL, NULL, 1, 4, 'public/imagem/perfil_usuarios/1585493875.png', '2020-05-24 20:22:05', '2020-05-24 17:22:01', NULL),
-(36, 1, 'Mariana Pinheiro', 'mariana@gmail.com', '3b5df72898847f008454f4ed60280d6bdffc890d', NULL, NULL, 2, 4, 'public/imagem/perfil_usuarios/1585494012.png', '2020-04-25 03:54:55', '2020-03-29 18:00:12', NULL),
-(38, 1, 'Margarida Dantas', 'margarida@hotmail.com', '3b5df72898847f008454f4ed60280d6bdffc890d', NULL, NULL, 2, 4, 'public/imagem/perfil_usuarios/1585493941.png', '2020-04-26 01:03:29', '2020-03-29 17:59:01', NULL),
-(42, 1, 'Leonardo Dodge', 'leonardo@gmail.com', '3b5df72898847f008454f4ed60280d6bdffc890d', NULL, NULL, 1, 4, 'public/imagem/perfil_usuarios/1585494107.png', '2020-04-25 03:54:48', '2020-03-29 18:01:47', NULL),
-(43, 1, 'Testador', 'testador@gmail.com', '3b5df72898847f008454f4ed60280d6bdffc890d', NULL, NULL, 1, 1, 'public/imagem/perfil_usuarios/1587774607.jpg', '2020-04-25 03:55:18', '2020-04-25 03:30:07', NULL),
-(46, 1, 'Lucas Amorin', 'lucas@hotmail.com', '3b5df72898847f008454f4ed60280d6bdffc890d', NULL, NULL, 1, 4, 'public/imagem/perfil_usuarios/1591812394.jpeg', '2020-06-10 21:07:50', '2020-06-10 18:07:50', NULL),
-(47, 1, 'Leonardo Souza', 'leonardo@hotmail.com', '3b5df72898847f008454f4ed60280d6bdffc890d', NULL, NULL, 1, 4, 'public/imagem/perfil_usuarios/1591813053.jpg', '2020-06-10 21:17:33', '2020-06-10 18:17:33', NULL),
-(49, 1, 'Anderson Oliveira', 'andersonoliver480@gmail.com', '3b5df72898847f008454f4ed60280d6bdffc890d', NULL, NULL, 1, 2, 'public/imagem/perfil_usuarios/1592172985.png', '2020-06-15 01:16:25', '2020-06-14 22:16:25', NULL);
+(1, 1, 'Marcella', 'admin@admin.com', '3b5df72898847f008454f4ed60280d6bdffc890d', 'ac88c1117c6f4c13c06a93cf54476ff803e993d2', '2022-12-05 23:27:55', 1, 2, 'public/imagem/perfil_usuarios/1585493352.jpg', '2022-11-05 23:27:55', '2022-11-05 23:27:55', NULL),
+(35, 1, 'Valmir', 'paidemarcela.com@gmail.com', 'd573809f2bfebe3a044eccff93ca6dc4dce91a0e', '81be356f7660ca6ece569d02bb8c97af3e5ba93c', '2022-12-05 23:26:47', 1, 4, '', '2022-11-05 23:26:47', '2022-11-05 23:26:47', NULL),
+(42, 1, 'Caixa', 'caixadomap@gmail.com', '97fc35b8d2c74a75ade8aa0c8b0ad543ff1adbd0', NULL, NULL, 2, 4, '', '2022-11-05 22:46:06', '2022-11-05 22:46:06', NULL),
+(49, 1, 'Elisangela', 'maedemarcela.@gmail.com', '8b5a94c09e6a845594c04bc2df7755041dfcc0b1', NULL, NULL, 2, 2, '', '2022-11-05 22:47:26', '2022-11-05 22:47:26', NULL);
 
 -- --------------------------------------------------------
 
@@ -868,7 +747,11 @@ INSERT INTO `vendas` (`id`, `id_usuario`, `id_meio_pagamento`, `id_empresa`, `id
 (239, 1, 2, 1, 4, 3.49, 2, 6.98, NULL, '2020-07-02 01:08:45', '2020-07-02 01:08:45', NULL, NULL, NULL),
 (240, 1, 1, 1, 2, 13, 1, 13, NULL, '2020-07-02 11:26:18', '2020-07-02 11:26:18', NULL, NULL, NULL),
 (241, 1, 3, 1, 1, 10.5, 1, 10.5, '0000-00-00', '2022-11-01 21:54:38', NULL, NULL, '4591200516361959e528da7.752678673801.11.2022', NULL),
-(242, 1, 3, 1, 2, 13, 1, 13, '0000-00-00', '2022-11-01 21:54:38', NULL, NULL, '4591200516361959e528da7.752678673801.11.2022', NULL);
+(242, 1, 3, 1, 2, 13, 1, 13, '0000-00-00', '2022-11-01 21:54:38', NULL, NULL, '4591200516361959e528da7.752678673801.11.2022', NULL),
+(243, 1, 2, 1, 9, 2580, 2, 5160, '0000-00-00', '2022-11-02 13:01:27', NULL, NULL, '65513168263626a274284c4.363141982702.11.2022', NULL),
+(244, 1, 2, 1, 14, 24.57, 1, 24.57, '0000-00-00', '2022-11-05 23:09:47', NULL, NULL, '11398987156366ed3b84fca5.734469964705.11.2022', NULL),
+(245, 35, 2, 1, 14, 24.57, 1, 24.57, '0000-00-00', '2022-11-05 23:27:19', NULL, NULL, '4308099736366f157c3d827.183660321905.11.2022', NULL),
+(246, 35, 2, 1, 11, 10, 1, 10, '0000-00-00', '2022-11-05 23:27:19', NULL, NULL, '4308099736366f157c3d827.183660321905.11.2022', NULL);
 
 --
 -- Índices para tabelas despejadas
@@ -1036,7 +919,7 @@ ALTER TABLE `vendas`
 -- AUTO_INCREMENT de tabela `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de tabela `clientes_enderecos`
@@ -1072,7 +955,7 @@ ALTER TABLE `empresas`
 -- AUTO_INCREMENT de tabela `log_acessos`
 --
 ALTER TABLE `log_acessos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT de tabela `meios_pagamentos`
@@ -1108,7 +991,7 @@ ALTER TABLE `perfis`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de tabela `produtos_pedidos`
@@ -1156,7 +1039,7 @@ ALTER TABLE `usuarios_modulos`
 -- AUTO_INCREMENT de tabela `vendas`
 --
 ALTER TABLE `vendas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=243;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=247;
 
 --
 -- Restrições para despejos de tabelas
@@ -1185,47 +1068,11 @@ ALTER TABLE `config_pdv`
   ADD CONSTRAINT `FK_config_pdv_tipo_pdv` FOREIGN KEY (`id_tipo_pdv`) REFERENCES `tipos_pdv` (`id`);
 
 --
--- Limitadores para a tabela `empresas`
---
-ALTER TABLE `empresas`
-  ADD CONSTRAINT `FK_empresas_clientes_segmentos` FOREIGN KEY (`id_segmento`) REFERENCES `clientes_segmentos` (`id`);
-
---
 -- Limitadores para a tabela `log_acessos`
 --
 ALTER TABLE `log_acessos`
   ADD CONSTRAINT `FK_log_clientes` FOREIGN KEY (`id_empresa`) REFERENCES `empresas` (`id`),
   ADD CONSTRAINT `FK_log_usuarios` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);
-
---
--- Limitadores para a tabela `produtos`
---
-ALTER TABLE `produtos`
-  ADD CONSTRAINT `FK_produtos_clientes` FOREIGN KEY (`id_empresa`) REFERENCES `empresas` (`id`);
-
---
--- Limitadores para a tabela `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD CONSTRAINT `FK_usuarios_clientes` FOREIGN KEY (`id_empresa`) REFERENCES `empresas` (`id`),
-  ADD CONSTRAINT `FK_usuarios_perfis` FOREIGN KEY (`id_perfil`) REFERENCES `perfis` (`id`),
-  ADD CONSTRAINT `FK_usuarios_sexo` FOREIGN KEY (`id_sexo`) REFERENCES `sexos` (`id`);
-
---
--- Limitadores para a tabela `usuarios_modulos`
---
-ALTER TABLE `usuarios_modulos`
-  ADD CONSTRAINT `FK_usuarios_modulos_empresas` FOREIGN KEY (`id_empresa`) REFERENCES `empresas` (`id`),
-  ADD CONSTRAINT `FK_usuarios_modulos_modulos_permissoes` FOREIGN KEY (`id_modulo`) REFERENCES `modulos` (`id`),
-  ADD CONSTRAINT `FK_usuarios_modulos_usuarios` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);
-
---
--- Limitadores para a tabela `vendas`
---
-ALTER TABLE `vendas`
-  ADD CONSTRAINT `FK_vendas_clientes` FOREIGN KEY (`id_empresa`) REFERENCES `empresas` (`id`),
-  ADD CONSTRAINT `FK_vendas_meios_de_pagamento` FOREIGN KEY (`id_meio_pagamento`) REFERENCES `meios_pagamentos` (`id`),
-  ADD CONSTRAINT `FK_vendas_usuarios` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
