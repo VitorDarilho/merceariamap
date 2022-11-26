@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06-Nov-2022 às 19:30
+-- Tempo de geração: 06-Nov-2022 às 19:40
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 7.4.30
 
@@ -79,14 +79,6 @@ CREATE TABLE `clientes_enderecos` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `clientes_enderecos`
---
-
-INSERT INTO `clientes_enderecos` (`id`, `id_empresa`, `id_cliente`, `cep`, `endereco`, `bairro`, `cidade`, `estado`, `numero`, `complemento`, `created_at`, `updated_at`) VALUES
-(3, 1, 4, '41927210', '2ª travessa são benedito', 'Chapada do Rio vermelho', 'salvador', 'Bahia', 14, NULL, '2020-05-29 15:30:33', '2020-05-30 01:04:00'),
-(4, 1, 4, '41927210', '2ª travessa são benedito', 'Chapada do Rio vermelho', 'salvador', 'Bahia', 14, ' bg ', '2020-05-29 15:31:48', '2020-05-29 15:31:48');
 
 -- --------------------------------------------------------
 
@@ -231,7 +223,7 @@ INSERT INTO `meios_pagamentos` (`id`, `legenda`, `created_at`, `updated_at`) VAL
 (1, 'Dinheiro', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (2, 'Crédito', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (3, 'Débito', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(4, 'Boleto', '2022-11-01 19:53:53', '0000-00-00 00:00:00');
+(4, 'PIX', '2022-11-01 19:53:53', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 

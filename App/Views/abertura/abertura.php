@@ -2,23 +2,17 @@
     <table class="table tabela-ajustada table-striped" style="width:100%">
         <thead>
         <thead>
-		<tr>
+        <tr>
             <th>#</th>
             <th>Nome</th>
             <th>Ativo</th>
-            <th>Codigo</th>
-            <th>Venda</th>
-            <th>Compra</th>
-            <th>R$ Preço</th>
-            <th>Data de Fabricação</th>
-            <th>Data de vencimento</th>
-            <th>Lote</th>
             <th>Quantidade</th>
-            
+            <th>Data Validade</th>
+            <th>R$ Preço</th>
             <th style="text-align:right;padding-right:0">
-                <?php $rota = BASEURL . '/produto/modalFormulario'; ?>
-                <button onclick="modalFormularioProdutos('<?php echo $rota; ?>', false);"
-                        class="btn btn-sm btn-success" title="Novo Produto!">
+                <?php $rota = BASEURL . '/abertura/modalFormulario'; ?>
+                <button onclick="modalFormularioAbertura('<?php echo $rota; ?>', false);"
+                        class="btn btn-sm btn-success" title="Abertura e Fechamento de caixa!">
                     <i class="fas fa-plus"></i>
                 </button>
             </th>
@@ -26,7 +20,7 @@
         </thead>
         <tbody>
 
-        <?php foreach ($produtos as $produto): ?>
+        <?php foreach ($abertura_fechamento as $abertura): ?>
             <tr>
                 <td>
                     <?php if (!is_null($produto->imagem) && $produto->imagem != ''): ?>
@@ -39,19 +33,6 @@
                     <?php else: ?>
                         <center><i class="fas fa-box-open" style="font-size:25px"></i></center>
                     <?php endif; ?>
-
-                    </td>
-                <td><?php echo $produto->nome; ?></td>
-                <?php if (is_null($produto->deleted_at)):?>
-                    <td>Sim</td>
-                <?php else:?>
-                    <td class="with_deleted_at">Não</td>
-                <?php endif;?>
-
-                <?php
-						$phpVariable = "Dog";
-						?>
-						<td>02</td>
                 </td>
                 <td><?php echo $produto->nome; ?></td>
                 <?php if (is_null($produto->deleted_at)):?>
@@ -59,29 +40,14 @@
                 <?php else:?>
                     <td class="with_deleted_at">Não</td>
                 <?php endif;?>
-                
-                <td><?php echo real($produto->preco); ?></td>
-              
-                </td>
-                <td><?php echo $produto->nome; ?></td>
-                <?php if (is_null($produto->deleted_at)):?>
-                    <td>Sim</td>
-                <?php else:?>
-                    <td class="with_deleted_at">Não</td>
-                <?php endif;?>
-                <td><?php echo real($produto->preco); ?></td>
-<td style="text-align:right">
-    <div class="btn-group" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-sm btn-secondary dropdown-toggle"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-cogs"></i>
-        </button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
 
-            <button class="dropdown-item" href="#"
-                    onclick="modalFormularioProdutos('<?php echo $rota; ?>', '<?php echo $produto->id; ?>')">
-                <i class="fas fa-edit"></i> Editar
-            </button>
+                <td>
+                    <#?php echo $abertura->data; ?>
+                </td>
+
+                <td>
+                    <?php echo date('d/m/Y', strtotime($abertura->data)); ?>
+                </td>
 
                 <td><?php echo real($produto->preco); ?></td>
 
@@ -94,7 +60,7 @@
                         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
 
                             <button class="dropdown-item" href="#"
-                                    onclick="modalFormularioProdutos('<?php echo $rota; ?>', '<?php echo $produto->id; ?>')">
+                                    onclick="modalFormularioAbertura('<?php echo $rota; ?>', '<?php echo $produto->id; ?>')">
                                 <i class="fas fa-edit"></i> Editar
                             </button>
 

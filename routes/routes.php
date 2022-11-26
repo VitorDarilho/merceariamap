@@ -126,9 +126,24 @@ $route->get('estoque','EstoqueController@index');
 
 # ----- AberturaController --------------------------------
 $route->get('abertura','AberturaController@index');
+$route->get('abertura/modalFormulario/{idAbertura?}', 'AberturaController@modalFormulario');
+$route->post('abertura/save', 'AberturaController@save');
+$route->post('abertura/update', 'AberturaController@update');
+
+
 
 #----- FechamentoController --------------------------------
 $route->get('fechamento','FechamentoController@index');
+
+# ----- FornecedoresController --------------------------------
+$route->get('fornecedores','FornecedoresController@index');
+
+#$route->get('fornecedores', 'FornecedoresController@index');
+#$route->get('Fornecedores/modalFormulario/{idCliente?}', 'FornecedoresController@modalFormulario');
+#$route->post('fornecedores/save', 'FornecedoresController@save');
+#$route->post('Fornecedores/update', 'FornecedoresController@update');
+#$route->get('Fornecedores/desativarFornecedores/{idFornecedores}', 'FornecedoresController@desativarFornecedores');
+#$route->get('Fornecedores/ativarFornecedores/{idFornecedores}', 'FornecedoresController@ativarFornecedores');
 
 
 # TESTE

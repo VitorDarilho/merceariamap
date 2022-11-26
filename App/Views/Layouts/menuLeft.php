@@ -52,11 +52,8 @@ use System\Session\Session;
                     <p>Estoque</p>
                 </a>
             </li>
-            
-
-
-
         <?php endif; ?>
+        
         <li class="">
             <a href="<?php echo BASEURL; ?>/cliente"
                class="<?php currentRouteFromMenu('cliente', 'clienteBorder'); ?>
@@ -67,21 +64,24 @@ use System\Session\Session;
 
         </li>
 
+        <li class="">
+            <a href="<?php echo BASEURL; ?>/fornecedores"
+               class="<?php currentRouteFromMenu('fornecedores'); ?>">
+                <i class="fas fa-shopping-basket"></i>
+                <p>Fornecedores</p>
+            </a>
+        </li>
+
 
         <li class="">
             <a href="<?php echo BASEURL; ?>/abertura"
                class="<?php currentRouteFromMenu('abertura'); ?>">
                 <i class="fas fa-shopping-basket"></i>
-                <p>Abertura</p>
+                <p>Abertura/Fechamento</p>
             </a>
         </li>
-        <li class="">
-            <a href="<?php echo BASEURL; ?>/fechamento"
-               class="<?php currentRouteFromMenu('fechamento'); ?>">
-                <i class="fas fa-shopping-basket"></i>
-                <p>Fechamento</p>
-            </a>
-        </li>
+        
+        
 
         <?php if (Session::get('idPerfil') != ConfigPerfil::vendedor()): ?>
             <li class="">

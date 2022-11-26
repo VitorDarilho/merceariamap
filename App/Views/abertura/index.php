@@ -1,75 +1,65 @@
+<?php
+use System\HtmlComponents\Modal\Modal;
+?>
+
 <div class="row">
 
     <div class="card col-lg-12 content-div">
         <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-shopping-basket"></i> Abertura de Caixa</h5>
+            <h5 class="card-title"><i class="fas fa-box-open"></i> Abertura e Fechamento de Caixa</h5>
         </div>
-</footer>
-<!DOCTYPE html>
-<html>
-	<style>
-		textColor{
-			color: #0c0c0c;
-			font-size: 12px;
-			text-decoration: underline;
+    <table class="table tabela-ajustada table-striped" style="width:100%">
+        <thead>
+        <tr>
+            <th>Data</th>
+            <th>Horário Abertura</th>
+            <th>Valor Abertura</th>
+            <th>Horario Fechamento</th>
+			<th>Valor Fechamento</th>
+            <th style="text-align:right;padding-right:0">
+                <?php $rota = BASEURL . 'abertura/modalFormulario'; ?>
+                <button onclick="modalFormularioAbertura('<?php echo $rota; ?>', false);"
+                        class="btn btn-sm btn-success" title="Abertura e Fechamento de Caixa!">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
 
+        
 
-		}
-		.inputSubmit{
-			border-radius: 20px;
-			border: 1px solid #FF4B2B;
-			background-image: url(teste.JPG);
-			color: #FFFFFF;
-			font-size: 12px;
-			font-weight: bold;
-			padding: 10px 20px;
-			letter-spacing: 1px;
-			text-transform: uppercase;
-			transition: transform 80ms ease-in;
-width: 150px;
-     height: 40px;
-}
-
-
-	</style>
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" href="scaixa.css">
-	<title>Login</title>
-</head>
-<body>
-	<div class="container" id="container">
-		<div class="form-container log-in-container">
-			<form action="#">
-
-				
-
-				<input type="Nme Completo" placeholder="Nome Completo" autocomplete="off"/>
-			<input type="Nme Completo" placeholder="Turno" autocomplete="off"/>
-				<input name="Fornecedor" class="input" <input id="date" type="date">
-
-<input type="time" id="appt" name="appt"
-       min="09:00" max="18:00" required>
-				<input type="DINHEIRO" placeholder="Valor inicial:" />
-			<input class="inputSubmit"href="CRIAR CONTA.html" type="submit" value="Abrir Caixa" id="entrar" width=10 height=50 name="submit" >
-			</form>
-		</div>
-
-</style>
-
-
-
-
-
-
-			<div>
-
-			</div>
-		</div>
-	</div>
-</body>
-
-
-</html>
+        <tfoot></tfoot>
+    </table>
 </div>
+</div>
+
+<?php Modal::start([
+    'id' => 'modalFormulario',
+    'width' => 'modal-lg',
+    'title' => 'Abertura e Fechamento de Caixa'
+]); ?>
+
+<div id="formulario"></div>
+
+<?php Modal::stop(); ?>
+
+<script src="<?php echo BASEURL; ?>/public/assets/js/core/jquery.min.js"></script>
+
+<script>
+function modalFormularioAbertura(rota, id) {
+        var url = "";
+
+        if (id) {
+            url = rota + "/" + id;
+        } else {
+            url = rota;
+        }
+
+        $("#formulario").html("<center><h3>Carregando...</h3></center>");
+        $("#modalFormulario").modal({backdrop: 'static'});
+
+        $("#formulario").load(url);
+    }
+
+</script>

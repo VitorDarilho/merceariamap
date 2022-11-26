@@ -151,42 +151,32 @@
         border-radius:10px;
         box-shadow:#deddd9 1px 2px 10px;
     }
+
+    .card-modal{
+        display:flex;
+        width:  70%;
+    }
+
 </style>
 
 <!--Caixa de pesquisa-->
-<div class="row">
-    <div class="card col-lg-12 content-div">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-6">
-                    <input type="text" class="form-control" placeholder="Pesquise por nome..."
-                    onkeyup="pesquisarProdutoPorNome($(this).val())">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+
+
 
 <!-- Carrega os produtos-->
 <div class="row">
-    <div class="card col-lg-12 content-div">
-        <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-box-open"></i> Produtos</h5>
-            <div id="carregar-produtos"></div>
-        </div>
-    </div>
-</div>
+<div class="card-modal">
 
-<div class="row">
+    <div class="card col-lg-9 content-div" >
 
-    <div class="card col-lg-9 content-div">
-        <div class="card-body" style="overflow-x:auto!important;">
+        <div class="card-body" style="overflow-x:auto!important;" >
             <h5 class="card-title">
                 <i class="fas fa-cart-arrow-down"></i>
                 Itens selecionados
             </h5>
 
-            <table class="table tabela-ajustada tabela-de-produto" style="width:100%;">
+            <table class="table tabela-ajustada tabela-de-produto" >
                 <thead>
                 <tr>
                     <th>#</th>
@@ -202,9 +192,27 @@
             </table>
         </div>
     </div>
-
-    <div class="card col-lg-3 content-div div-realizar-pagamento" style="">
-        <div class="card-body div-card-body-realizar-pagamento">
+    <div >
+    <div class="row" style="margin-left:10%; width:600px ">
+    <div class="card col-lg-12 content-div">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6" >
+                    <input type="text" class="form-control"style=" width:550px " placeholder="Pesquise por nome..."
+                    onkeyup="pesquisarProdutoPorNome($(this).val())">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="card col-lg-12 content-div" style="width:600px; margin-left:10%" >
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-box-open"></i> Produtos</h5>
+                <div id="carregar-produtos"></div>
+            </div>
+        </div>
+        <div class="card col-lg-3 content-div div-realizar-pagamento" style="margin-left:8%"; >
+        <div class="card-body div-card-body-realizar-pagamento" style="width:600px; ">
 
             <span>Total</span> <br>
             <input type="text" class="form-control" id="b-mostra-valor-total" readonly placeholder="R$ 00,00">
@@ -219,7 +227,7 @@
                         <option value="<?php echo $pagamento->id; ?>">
                             <?php echo $pagamento->legenda; ?>
                         </option>
-                    <?php endforeach; ?>
+                    <?php endforeach;?>
                 </select>
             </div>
 
@@ -246,6 +254,14 @@
 
         </div>
     </div>
+    </div>
+    </div>
+
+</div>
+
+<div class="row">
+
+
 
 </div><!--end row-->
 

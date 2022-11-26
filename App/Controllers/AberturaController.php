@@ -9,6 +9,7 @@ use System\Controller\Controller;
 use System\Get\Get;
 use System\Post\Post;
 use System\Session\Session;
+use App\Models\Abertura;
 
 ini_set('display_errors',1);
 ini_set('display_startup_erros',1);
@@ -40,6 +41,20 @@ class AberturaController extends Controller
         $logged->isValid();
     }
 
+    public function save()
+    {   
+        $dados = (array) $this->post->data();
+        #dd($dados);
+        try {
+            $abertura = new Abertura();  
+            $abertura->save($dados);
+            return $this->get->redirectTo("abertura");
+
+        } catch (Exception $e) {
+            dd($e->getMessage());
+        }
+    } 
+
     public function index()
     {
        
@@ -48,6 +63,18 @@ class AberturaController extends Controller
         #$informacoes = $produto->informacaoesGeraisDosProdutos($this->idEmpresa);
 
        $this->view('abertura/index', $this->layout);
+    }
+    
+    public function modalFormulario($idAbertura)
+    {
+        $abertura = false;
+
+        #if ($idAbertura) {
+           # $abertura = new Abertura();
+          #  $abertura = $Abertura->find($idAbertura);
+       # }
+
+        $this->view('abertura/formulario', null, compact('abertura'));
     }
 
 }
