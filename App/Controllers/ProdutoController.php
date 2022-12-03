@@ -116,7 +116,7 @@ class ProdutoController extends Controller
             $dadosProduto = $produto->find($this->post->data()->id);
 
             $dados = (array)$this->post->only([
-                'nome', 'preco', 'descricao', 'data_validade', 'quantidade'
+                'nome', 'preco', 'descricao', 'data_validade', 'quantidade', 'data_fabricacao', 'lote'
             ]);
 
             $dados['descricao'] = nl2br($dados['descricao']);

@@ -11,12 +11,6 @@
       enctype='multipart/form-data'>
     <div class="row">
 
-        <div class="col-md-12 obs">
-            <span>
-            Obs: Ao cadastrar um Cliente, é recomendável que cadastre também o endereço!
-            <br> Esta informação será usada no modulo de pedidos!
-            </span>
-        </div>
 
         <input type="hidden" name="_token" value="<?php echo TOKEN; ?>"/>
 
@@ -61,15 +55,7 @@
             </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="form-group">
-                <label for="id_cliente_segmento">CNF*</label>
-                <input type="text" class="form-control" name="cnpj" id="cnpj" placeholder="Digite o CNPJ"
-                   value="<?php echo $clienteSegmento->id; ?>">
-                                <?php echo $clienteSegmento->descricao; ?>
-                        
-            </div>
-        </div>
+
 
         <div class="col-md-4 elemento-quando-for-pessoa-juridica">
             <div class="form-group">

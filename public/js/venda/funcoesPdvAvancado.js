@@ -143,7 +143,7 @@ function saveVendasViaSession(token) {
 
     // verifica se é boleto e preencheu a data de compensacao
     if (meioPagamento == 4 && dataCompensacao == "") {
-        modalValidacao('Algo deu errado', 'Você precisa adiciona a data de compensação do boleto!');
+        modalValidacao('Algo deu errado', 'Você precisa adiciona a data de compensação do PIX!');
         setTimeout(modalValidacaoClose, 2000);
         return;
     }

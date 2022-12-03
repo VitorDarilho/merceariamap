@@ -121,8 +121,11 @@ $route->post('empresa/update', 'EmpresaController@update');
 $route->get('empresa/modalFormulario/{idEmpresa?}', 'EmpresaController@modalFormulario');
 $route->get('empresa/verificaSeEmailExiste/{email}/{idEmpresa?}', 'EmpresaController@verificaSeEmailExiste');
 
-# ----- EstoqueController --------------------------------
-$route->get('estoque','EstoqueController@index');
+# ----- FornecedoresController --------------------------------
+$route->get('fornecedores','FornecedoresController@index');
+$route->get('fornecedores/modalFormulario/{idFornecedores?}', 'FornecedoresController@modalFormulario');
+$route->post('fornecedores/save', 'FornecedoresController@save');
+$route->post('fornecedores/update', 'FornecedoresController@update');
 
 # ----- AberturaController --------------------------------
 $route->get('abertura','AberturaController@index');
@@ -130,13 +133,16 @@ $route->get('abertura/modalFormulario/{idAbertura?}', 'AberturaController@modalF
 $route->post('abertura/save', 'AberturaController@save');
 $route->post('abertura/update', 'AberturaController@update');
 
+# ----- FechamentoController --------------------------------
+$route->get('caixafechamento','CaixaFechamentoController@index');
+$route->get('caixafechamento/modalFormulario/{idCaixaFechamento?}', 'CaixaFechamentoController@modalFormulario');
+$route->post('caixafechamento/save', 'CaixaFechamentoController@save');
+$route->post('caixafechamento/update', 'CaixaFechamentoController@update');
 
 
-#----- FechamentoController --------------------------------
-$route->get('fechamento','FechamentoController@index');
 
-# ----- FornecedoresController --------------------------------
-$route->get('fornecedores','FornecedoresController@index');
+
+
 
 #$route->get('fornecedores', 'FornecedoresController@index');
 #$route->get('Fornecedores/modalFormulario/{idCliente?}', 'FornecedoresController@modalFormulario');

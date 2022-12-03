@@ -39,21 +39,12 @@ use System\Session\Session;
                 <a href="<?php echo BASEURL; ?>/produto"
                    class="<?php currentRouteFromMenu('produto', 'produtoBorder'); ?>">
                     <i class="fas fa-box-open"></i>
-                    <p>Produtos</p>
-                </a>
-            </li>
-        <?php endif; ?>
-        
-        <?php if (Session::get('idPerfil') != ConfigPerfil::vendedor()): ?>
-            <li class="">
-            <a href="<?php echo BASEURL; ?>/estoque"
-                   class="<?php currentRouteFromMenu('estoque'); ?>">
-                    <i class="fas fa-box-open"></i>
                     <p>Estoque</p>
                 </a>
             </li>
         <?php endif; ?>
         
+    
         <li class="">
             <a href="<?php echo BASEURL; ?>/cliente"
                class="<?php currentRouteFromMenu('cliente', 'clienteBorder'); ?>
@@ -67,7 +58,7 @@ use System\Session\Session;
         <li class="">
             <a href="<?php echo BASEURL; ?>/fornecedores"
                class="<?php currentRouteFromMenu('fornecedores'); ?>">
-                <i class="fas fa-shopping-basket"></i>
+                <i class="fas fa-truck"></i>
                 <p>Fornecedores</p>
             </a>
         </li>
@@ -76,8 +67,16 @@ use System\Session\Session;
         <li class="">
             <a href="<?php echo BASEURL; ?>/abertura"
                class="<?php currentRouteFromMenu('abertura'); ?>">
-                <i class="fas fa-shopping-basket"></i>
-                <p>Abertura/Fechamento</p>
+                <i class="fas fa-money-bill"></i>
+                <p>Abertura de Caixa</p>
+            </a>
+        </li>
+
+        <li class="">
+            <a href="<?php echo BASEURL; ?>/caixafechamento"
+               class="<?php currentRouteFromMenu('caixafechamento'); ?>">
+                <i class="fas fa-money-bill"></i>
+                <p>Fechamento de Caixa</p>
             </a>
         </li>
         

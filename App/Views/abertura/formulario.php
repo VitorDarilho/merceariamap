@@ -15,11 +15,20 @@
       action="<?php echo isset($produto->id) ? BASEURL . '/abertura/update' : BASEURL . '/abertura/save'; ?>">
     <div class="row">
     <input type="hidden" name="_token" value="<?php echo TOKEN; ?>"/> 
+        
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="vendedor">Vendedor</label>
+                <input type="text" class="form-control" name="vendedor" id="vendedor" placeholder="Vendedor"
+                       value="<?php #echo isset($produto->data) ? date('Y-m-d', strtotime($produto->data_validade)) : '' ?>">
+            </div>
+        </div>
+
         <div class="col-md-4">
             <div class="form-group">
                 <label for="data">Data</label>
-                <input type="date" class="form-control" name="data" id="data" placeholder="data"
-                       value="<?php #echo isset($produto->data) ? date('Y-m-d', strtotime($produto->data_validade)) : '' ?>">
+                <input type="date" class="form-control" name="data" id="data" placeholder= "Data"
+                       value="<?php #echo isset($produto->data_validade) ? date('Y-m-d', strtotime($produto->data_validade)) : '' ?>">
             </div>
         </div>
 
@@ -34,24 +43,8 @@
         <div class="col-md-2">
             <div class="form-group">
                 <label for="valor_abertura">Valor Abertura</label>
-                <input type="text" class="form-control campo-moeda" name="valor_abertura" id="valor_abertura" placeholder="00,00"
-                       value="<?php echo isset($abertura_fechamento->valor_abertura) ? real($abertura_fechamento->valor_abertura) : '' ?>">
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="form-group">
-                <label for="horario_fechamento">Horario Fechamento</label>
-                <input type="time" class="form-control" name="horario_fechamento" id="horario_fechamento" placeholder="Horario de fechamento"
-                       value="<?php #echo isset($produto->data_validade) ? date('Y-m-d', strtotime($produto->data_validade)) : '' ?>">
-            </div>
-        </div>
-
-        <div class="col-md-2">
-            <div class="form-group">
-                <label for="valor_fechamento">Valor Fechamento</label>
-                <input type="text" class="form-control campo-moeda" name="valor_fechamento" id="preco" placeholder="00,00"
-                       value="<?php echo isset($abertura_fechamento->valor_fechamento) ? real($abertura_fechamento->valor_fechamento) : '' ?>">
+                <input type="text" class="form-control .campo-moeda" name="valor_abertura" id="valor_abertura" placeholder="00,00"
+                       value="<?php echo isset($abertura->valor_abertura) ? real($abertura->valor_abertura) : '' ?>">
             </div>
         </div>
 

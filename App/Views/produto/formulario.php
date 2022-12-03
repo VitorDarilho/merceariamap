@@ -34,7 +34,7 @@
 
         <input type="hidden" name="id_empresa" value="1">
 
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="form-group">
                 <label for="nome">Nome *</label>
                 <input type="text" class="form-control nome" name="nome" id="nome"
@@ -61,9 +61,25 @@
 
         <div class="col-md-4">
             <div class="form-group">
-                <label for="preco">Data de Validade*</label>
+                <label for="preco">Data de Validade</label>
                 <input type="date" class="form-control" name="data_validade" id="data_validade" placeholder="Data Validade"
                        value="<?php echo isset($produto->data_validade) ? date('Y-m-d', strtotime($produto->data_validade)) : '' ?>">
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="preco">Data de Fabricação</label>
+                <input type="date" class="form-control" name="data_fabricacao" id="data_fabricacao" placeholder="Data fabricacao"
+                       value="<?php echo isset($produto->data_fabricacao) ? date('Y-m-d', strtotime($produto->data_fabricacao)) : '' ?>">
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="form-group">
+                <label for="preco">Lote</label>
+                <input type="text" class="form-control" name="lote" id="lote" placeholder="Lote"
+                       value="<?php #echo isset($produto->preco) ? real($produto->preco) : '' ?>">
             </div>
         </div>
 
@@ -87,7 +103,7 @@
                         placeholder="Número do código de barras"
                         value="<?php echo isset($produto->codigo) ? $produto->codigo : '' ?>">
                         <p class="text-muted">
-                            <small>Deixe vazio para ser preenchido automáticamente!</small>
+                            <small>Deixe vazio para ser preenchido automaticamente!</small>
                         </p>
                 </div>
             </div>

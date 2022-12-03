@@ -47,7 +47,7 @@ use System\HtmlComponents\Modal\Modal;
 
     <div class="card col-lg-12 content-div">
         <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-box-open"></i> Produtos</h5>
+            <h5 class="card-title"><i class="fas fa-box-open"></i> Estoque</h5>
         </div>
         <!-- Mostra as mensagens de erro-->
         <?php FlashMessage::show(); ?>

@@ -106,6 +106,9 @@ class PdvDiferencialController extends Controller
                 $venda = $venda->save($dados);
                 $status = true;
 
+                $produto = new Produto();
+                $produto->decrementaQuantidadeProduto((int) $dados['id_produto'], (int) $dados['quantidade']);
+
                 unset($_SESSION['venda']);
 
             } catch (\Exception $e) {
@@ -164,3 +167,4 @@ class PdvDiferencialController extends Controller
         $this->view('pdv/produtosAvenda', null, compact('produtos'));
     }
 }
+

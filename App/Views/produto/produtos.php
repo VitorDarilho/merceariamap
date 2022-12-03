@@ -8,6 +8,8 @@
             <th>Ativo</th>
             <th>Quantidade</th>
             <th>Data Validade</th>
+            <th>Data Fabricação</th>
+            <th>Lote</th>
             <th>R$ Preço</th>
             <th style="text-align:right;padding-right:0">
                 <?php $rota = BASEURL . '/produto/modalFormulario'; ?>
@@ -49,7 +51,17 @@
                     <?php echo date('d/m/Y', strtotime($produto->data_validade)); ?>
                 </td>
 
-                <td><?php echo real($produto->preco); ?></td>
+                <td>
+                    <?php echo date('d/m/Y', strtotime($produto->data_fabricacao)); ?>
+                </td>
+
+                <td>
+                    <?php echo $produto->lote; ?>
+                </td>
+
+                <td>
+                    <?php echo real($produto->preco); ?>
+                </td>
 
                 <td style="text-align:right">
                     <div class="btn-group" role="group">

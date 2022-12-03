@@ -2,7 +2,7 @@
 
     <div class="card col-lg-12 content-div">
         <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-box-open"></i> Estoque</h5>
+            <h5 class="card-title"><i class="fas fa-box-open"></i>Produtos</h5>
         </div>
     <table class="table tabela-ajustada table-striped" style="width:100%">
         <thead>
@@ -10,6 +10,7 @@
             <th>#</th>
             <th>Nome</th>
             <th>Ativo</th>
+            <th>Categoria</th>
             <th>R$ Preço</th>
             <th style="text-align:right;padding-right:0">
                 <?php $rota = BASEURL . '/produto/modalFormulario'; ?>

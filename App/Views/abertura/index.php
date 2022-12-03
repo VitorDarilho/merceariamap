@@ -6,38 +6,72 @@ use System\HtmlComponents\Modal\Modal;
 
     <div class="card col-lg-12 content-div">
         <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-box-open"></i> Abertura e Fechamento de Caixa</h5>
+            <h5 class="card-title"><i class="fas fa-money-bill"></i> Abertura de Caixa</h5>
         </div>
     <table class="table tabela-ajustada table-striped" style="width:100%">
-        <thead>
-        <tr>
-            <th>Data</th>
-            <th>Horário Abertura</th>
-            <th>Valor Abertura</th>
-            <th>Horario Fechamento</th>
-			<th>Valor Fechamento</th>
-            <th style="text-align:right;padding-right:0">
-                <?php $rota = BASEURL . 'abertura/modalFormulario'; ?>
-                <button onclick="modalFormularioAbertura('<?php echo $rota; ?>', false);"
-                        class="btn btn-sm btn-success" title="Abertura e Fechamento de Caixa!">
-                    <i class="fas fa-plus"></i>
-                </button>
-            </th>
-        </tr>
-        </thead>
-        <tbody>
+        <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/jquery-te-1.4.0.css">
+<style>
+    #codigo::-webkit-outer-spin-button,
+    #codigo::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
+    #codigo[type=number] {
+        -moz-appearance:textfield; /* Firefox */
+    }
+</style>
+
+<form method="post"
+      action="<?php echo isset($produto->id) ? BASEURL . '/abertura/update' : BASEURL . '/abertura/save'; ?>">
+    <div class="row">
+    <input type="hidden" name="_token" value="<?php echo TOKEN; ?>"/> 
+        
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="vendedor">Vendedor</label>
+                <input type="text" class="form-control" name="vendedor" id="vendedor" placeholder="Vendedor"
+                       value="<?php #echo isset($produto->data) ? date('Y-m-d', strtotime($produto->data_validade)) : '' ?>">
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="data">Data</label>
+                <input type="date" class="form-control" name="data" id="data" placeholder= "Data"
+                       value="<?php #echo isset($produto->data_validade) ? date('Y-m-d', strtotime($produto->data_validade)) : '' ?>">
+            </div>
+        </div>
+
+         <div class="col-md-4">
+            <div class="form-group">
+                <label for="horario_abertura">Horario Abertura</label>
+                <input type="time" class="form-control" name="horario_abertura" id="horario_abertura" placeholder="Horario de abertura"
+                       value="<?php #echo isset($produto->data_validade) ? date('Y-m-d', strtotime($produto->data_validade)) : '' ?>">
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="form-group">
+                <label for="valor_abertura">Valor Abertura</label>
+                <input type="text" class="form-control campo-moeda" name="valor_abertura" id="valor_abertura" placeholder="00,00"
+                       value="<?php echo isset($abertura->valor_abertura) ? real($abertura->valor_abertura) : '' ?>">
+            </div>
+        </div>
 
         
+    <button type="submit" class="btn btn-success btn-sm" style="float:right">
+        <i class="fas fa-save"></i> Salvar
+    </button>
+</form>
 
-        <tfoot></tfoot>
-    </table>
-</div>
-</div>
+<br>
+<br>
 
 <?php Modal::start([
     'id' => 'modalFormulario',
     'width' => 'modal-lg',
-    'title' => 'Abertura e Fechamento de Caixa'
+    'title' => 'Abertura de Caixa'
 ]); ?>
 
 <div id="formulario"></div>
@@ -63,3 +97,15 @@ function modalFormularioAbertura(rota, id) {
     }
 
 </script>
+
+<script> 
+$(function () {
+        jQuery('.campo-moeda')
+            .maskMoney({
+                prefix: 'R$ ',
+                allowNegative: false,
+                thousands: '.', decimal: ',',
+                affixesStay: false
+            });
+    });
+    </script>
