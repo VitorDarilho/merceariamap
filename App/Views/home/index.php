@@ -340,8 +340,8 @@
 
                                 
 
-                                <?php if (!is_null($venda->Pix)): ?>
-                                    <td>R$ <?php echo real($venda->Pix); ?></td>
+                                <?php if (!is_null($venda->Boleto)): ?>
+                                    <td>R$ <?php echo real($venda->Boleto); ?></td>
                                 <?php else: ?>
                                     <td><small>Não consta</small></td>
                                 <?php endif; ?>

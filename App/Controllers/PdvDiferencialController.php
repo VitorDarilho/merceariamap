@@ -74,6 +74,7 @@ class PdvDiferencialController extends Controller
         if ($meioDePagamento == 4) {
             $dataCompensacao = $this->post->data()->data_compensacao;
         }
+        
 
         /**
          * Gera um código unico de venda que será usado em todos os registros desse Loop

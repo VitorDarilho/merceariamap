@@ -19,7 +19,7 @@
                 <thead>
                 <tr>
                     <th>Nome</th>
-                    <th class="hidden-when-mobile"></th>
+                    <th class="hidden-when-mobile">Tipo</th>
                     <th class="hidden-when-mobile">CPF</th>
                     <th>Ativo</th>
                     <th>Endereço</th>

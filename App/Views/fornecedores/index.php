@@ -17,7 +17,7 @@ use System\HtmlComponents\Modal\Modal;
             <th>Segmento</th>
             <th>Telefone</th>
             <th style="text-align:right;padding-right:0">
-                <?php $rota = BASEURL . '/fornecedores/modalFormulario'; ?>
+                <?php $rota = BASEURL . '/fornecedores/modalFormulario';?>
                 <button onclick="modalFormularioFornecedores('<?php echo $rota; ?>', false);"
                         class="btn btn-sm btn-success" title="Novo Produto!">
                     <i class="fas fa-plus"></i>
@@ -26,6 +26,23 @@ use System\HtmlComponents\Modal\Modal;
         </tr>
         </thead>
         <tbody>
+        <?php foreach ($fornecedores as $fornecedoress): ?>
+            <tr>
+            <td>
+                <?php echo $fornecedores->$nome_fornecedor; ?>
+
+                <td>
+                    <?php echo $cnpj_fornecedor->cnpj_fornecedor; ?>
+                </td>
+            </td>
+        </tr>
+        <?php endforeach;?>
+
+
+
+
+
+
         <tfoot></tfoot>
     </table>
 </div>
@@ -34,12 +51,12 @@ use System\HtmlComponents\Modal\Modal;
 <?php Modal::start([
     'id' => 'modalFormulario',
     'width' => 'modal-lg',
-    'title' => 'Cadastro Fornecedores'
-]); ?>
+    'title' => 'Cadastro Fornecedores',
+]);?>
 
 <div id="formulario"></div>
 
-<?php Modal::stop(); ?>
+<?php Modal::stop();?>
 
 <script src="<?php echo BASEURL; ?>/public/assets/js/core/jquery.min.js"></script>
 

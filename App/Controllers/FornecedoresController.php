@@ -41,12 +41,26 @@ class FornecedoresController extends Controller
         $logged->isValid();
     }
 
+    
+    public function index()
+    {
+       
+        $fornecedores = new Fornecedores();
+        $fornecedoress = $fornecedores->fornecedores();
+        
+        #$informacoes = $produto->informacaoesGeraisDosProdutos($this->idEmpresa);
+
+       $this->view('fornecedores/index', $this->layout, compact('fornecedores'));
+    }
+    
+
     public function save()
     {   
-        $dados = (array) $this->post->data();
+        $fornecedores = new Fornecedores();
+        $dados = (array) $this->post->only(
+            ['nome_fornecedor','cnpj_fornecedor','endereco_fornecedor', 'segmento_fornecedor', 'telefone_fornecedor']);
         #dd($dados);
         try {
-            $fornecedores = new Fornecedores();  
             $fornecedores->save($dados);
             return $this->get->redirectTo("fornecedores");
 
@@ -55,14 +69,22 @@ class FornecedoresController extends Controller
         }
     } 
 
-    public function index()
-    {
-       
-        
-        #$produto = new Produto();
-        #$informacoes = $produto->informacaoesGeraisDosProdutos($this->idEmpresa);
 
-       $this->view('fornecedores/index', $this->layout);
+    public function update()
+    {
+        $fornecedores = new Fornecedores();
+        $dados = $fornecedores->find($this->post->data()->id);
+        $dados = (array)$this->post->only([
+            'nome_fornecedor','cnpj_fornecedor','endereco_fornecedor', 'segmento_fornecedor', 'telefone_fornecedor'
+        ]);
+
+        try {
+            $fornecedores->update($dados, $fornecedores->id);
+            return $this->get->redirectTo("fornecedores");
+
+        } catch (Exception $e) {
+            dd($e->getMessage());
+        }
     }
     
     public function modalFormulario($idFornecedores)

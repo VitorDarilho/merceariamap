@@ -43,7 +43,10 @@ class AberturaController extends Controller
 
     public function save()
     {   
-        $dados = (array) $this->post->data();
+        $dados = (array) $this->post->only([
+        'data', 'horario_abertura', 'valor_abertura', 'vendedor'
+            
+        ]);
         #dd($dados);
         try {
             $abertura = new Abertura();  

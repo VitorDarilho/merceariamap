@@ -12,18 +12,17 @@
 </style>
 
 <form method="post"
-      action="<?php echo isset($fornecedores->cadastro_fornecedores) ? BASEURL . '/fornecedores/update' : BASEURL . '/fornecedores/save'; ?>">
+      action="<?php echo isset($caixafechamento->fechamento_caixa) ? BASEURL . '/fornecedores/update' : BASEURL . '/fornecedores/save'; ?>">
     <div class="row">
     <input type="hidden" name="_token" value="<?php echo TOKEN; ?>"/> 
        
         <div class="col-md-4">
             <div class="form-group">
-                <label for="nome_fornecedor">Nome fornecedor</label>
-                <input type="text" class="form-control" name="nome_fornecedor" id="nome_fornecedor" placeholder="Nome fornecedor"
+                <label for="nome_fornecedor">Nome Fornecedor</label>
+                <input type="text" class="form-control" name="nome_fornecedor" id="nome_fornecedor" placeholder="Nome do Fornecedor"
                        value="<?php #echo isset($produto->data) ? date('Y-m-d', strtotime($produto->data_validade)) : '' ?>">
             </div>
         </div>
-    
         <div class="col-md-4">
             <div class="form-group">
                 <label for="cnpj_fornecedor">CNPJ</label>
@@ -47,7 +46,7 @@
                        value="<?php #echo isset($produto->data) ? date('Y-m-d', strtotime($produto->data_validade)) : '' ?>">
             </div>
         </div>
-        
+
         <div class="col-md-4">
             <div class="form-group">
                 <label for="telefone_fornecedor">Telefone</label>
@@ -55,7 +54,7 @@
                        value="<?php #echo isset($produto->data) ? date('Y-m-d', strtotime($produto->data_validade)) : '' ?>">
             </div>
         </div>
-
+ 
     <button type="submit" class="btn btn-success btn-sm" style="float:right">
         <i class="fas fa-save"></i> Salvar
     </button>
@@ -65,14 +64,14 @@
 <br>
 
 <script src="<?php echo BASEURL; ?>/public/js/jquery-te-1.4.0.min.js"></script>
+<script src="<?php echo BASEURL; ?>/public/js/maskedInput.js"></script>
+<script> 
 
-<script>
 jQuery(function ($) {
         jQuery("#cnpj_fornecedor").mask("99.999.999/9999-99");
         jQuery("#telefone_fornecedor").mask("(99) 9999-9999");
     });
 
-</script>
-
+    </script>  
 
     

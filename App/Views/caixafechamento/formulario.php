@@ -43,7 +43,7 @@
         <div class="col-md-2">
             <div class="form-group">
                 <label for="valor_fechamento">Valor Fechamento</label>
-                <input type="double" class="form-control campo-moeda" name="valor_fechamento" id="valor_fechamento" placeholder="00,00"
+                <input type="float" class="form-control campo-moeda" name="valor_fechamento" id="valor_fechamento" placeholder="00,00"
                        value="<?php echo isset($fechamento_caixa->valor_fechamento) ? real($fechamento_caixa->valor_fechamento) : '' ?>">
             </div>
         </div>
@@ -58,7 +58,7 @@
 <br>
 
 <script src="<?php echo BASEURL; ?>/public/js/jquery-te-1.4.0.min.js"></script>
-
+<script src="<?php echo BASEURL; ?>/public/js/maskedInput.js"></script>
 <script> 
 
 $(function () {

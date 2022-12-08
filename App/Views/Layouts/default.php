@@ -136,8 +136,7 @@ $configPdv = $configPdv->configPdv(Session::get('idEmpresa'));
             <?php endif; ?>
 
           </span>
-                <!--<span>Zig</span>
-                <span>Money</span>-->
+                
             </a>
         </div>
 

@@ -64,7 +64,7 @@ class GerarRelatorioDeVendasPorPeriodoPDFService
             'QTD',
             'Total',
             'PAG',
-            'Data'
+            'Data',
         ];
         $dados = [];
         $i = 0;
