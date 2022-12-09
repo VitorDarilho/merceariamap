@@ -153,4 +153,11 @@ class RelatorioController extends Controller
             $empresa
         );
     }
+
+    public function gerarPDFCaixa()
+    {
+
+        $this->view('relatorio/vendasPorPeriodo/pdf_caixa');
+    
+    }
 }

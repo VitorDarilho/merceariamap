@@ -119,13 +119,10 @@
 
 <div class="card col-lg-13 content-div">
         <div class="card-body">
-            <h5 class="card-title">
-                <?php iconFilter(); ?>
-                Relatório de caixa
-            </h5>
+        <h5 class="card-title"><i class="fas fa-money-bill"></i> Relatório de caixa</h5>
 
-            <a onclick="gerarCaixaPDF()" class="cool-btn btn btn-sm btn-defoult text-right pull-right"
-                       id="baixar-pdf" title="Baixar em formato PDF!">
+        <a href="<?php $rota = BASEURL . '/relatorio/vendasPorPeriodo/pdf_caixa'; ?>" class="cool-btn btn btn-sm btn-defoult text-right pull-right"
+                        title="Baixar PDF caixa!">
                         <i class="fas fa-cloud-download-alt"></i> PDF
                     </a>
         </div>
@@ -169,5 +166,6 @@
 
         window.location.href = rota;
     }
+
 
 </script>

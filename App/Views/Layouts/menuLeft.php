@@ -46,8 +46,8 @@ use System\Session\Session;
         
     
         <li class="">
-            <a href="<?php echo BASEURL; ?>/cliente"
-               class="<?php currentRouteFromMenu('cliente', 'clienteBorder'); ?>
+            <a href="<?php echo BASEURL; ?>/fornecedor"
+               class="<?php currentRouteFromMenu('fornecedor', 'fornecedorBorder'); ?>
           <?php currentRouteFromMenu('clienteEndereco', 'clienteBorder'); ?>">
                 <i class="fas fa-truck"></i>
                 <p>Fornecedores</p>

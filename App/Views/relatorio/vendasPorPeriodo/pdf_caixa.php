@@ -7,7 +7,7 @@ require './vendor/autoload.php';
 include_once './conexao.php';
 
 // QUERY para recuperar os registros do banco de dados
-$query_abertura = "SELECT 'data', 'horario_abertura', 'valor_abertura', 'vendedor' FROM abertura";
+$query_abertura = "SELECT horario_abertura, valor_abertura, vendedor FROM abertura";
 
 // Prepara a QUERY
 $result_abertura = $conn->prepare($query_abertura);

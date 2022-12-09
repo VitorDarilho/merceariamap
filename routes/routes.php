@@ -37,6 +37,8 @@ $route->get('relatorio/gerarXls/{de}/{ate}/{opcao?}', 'RelatorioController@gerar
 $route->get('relatorio/gerarPDF/{de}/{ate}/{opcao?}', 'RelatorioController@gerarPDF');
 $route->get('desativarVenda/{idVenda}', 'PdvPadraoController@desativarVenda');
 $route->get('relatorio/itensDaVenda/{codigo}', 'RelatorioController@itensDaVendaChamadaAjax');
+$route->get('relatorio/vendasPorPeriodo/pdf_caixa', 'RelatorioController@gerarPDFCaixa');
+
 
 # ----- ProdutoController --------------------------------
 $route->get('produto', 'ProdutoController@index');
@@ -73,12 +75,20 @@ $route->get('pdvDiferencial/calcularTroco/{valorRecebido}',
     'PdvDiferencialController@calcularTroco');
 
 # ----- ClienteController --------------------------------
-$route->get('cliente', 'ClienteController@index');
+$route->get('fornecedor', 'ClienteController@index');
 $route->get('cliente/modalFormulario/{idCliente?}', 'ClienteController@modalFormulario');
 $route->post('cliente/save', 'ClienteController@save');
 $route->post('cliente/update', 'ClienteController@update');
 $route->get('cliente/desativarCliente/{idCliente}', 'ClienteController@desativarCliente');
 $route->get('cliente/ativarCliente/{idCliente}', 'ClienteController@ativarCliente');
+
+# ----- ClienteController --------------------------------
+$route->get('fornecedor', 'FornecedorController@index');
+$route->get('fornecedor/modalFormulario/{idCliente?}', 'FornecedorController@modalFormulario');
+$route->post('fornecedor/save', 'FornecedorController@save');
+$route->post('fornecedor/update', 'FornecedorController@update');
+$route->get('fornecedor/desativarFornecedor/{idFornecedor}', 'FornecedorController@desativarFornecedor');
+$route->get('fornecedor/ativarFornecedor/{idFornecedor}', 'FornecedorController@ativarFornecedor');
 
 $route->get('cliente/verificaSeEmailExiste/{email}/{idCliente?}', 'ClienteController@verificaSeEmailExiste');
 $route->get('cliente/verificaSeCnpjExiste/{cnpj}/{idCliente?}', 'ClienteController@verificaSeCnpjExiste');
@@ -121,11 +131,12 @@ $route->post('empresa/update', 'EmpresaController@update');
 $route->get('empresa/modalFormulario/{idEmpresa?}', 'EmpresaController@modalFormulario');
 $route->get('empresa/verificaSeEmailExiste/{email}/{idEmpresa?}', 'EmpresaController@verificaSeEmailExiste');
 
+
 # ----- FornecedoresController --------------------------------
-$route->get('fornecedores','FornecedoresController@index');
-$route->get('fornecedores/modalFormulario/{idFornecedores?}', 'FornecedoresController@modalFormulario');
-$route->post('fornecedores/save', 'FornecedoresController@save');
-$route->post('fornecedores/update', 'FornecedoresController@update');
+$route->get('fornecedor','FornecedorController@index');
+$route->get('fornecedor/modalFormulario/{idFornecedor?}', 'FornecedorController@modalFormulario');
+$route->post('fornecedor/save', 'FornecedorController@save');
+$route->post('fornecedor/update', 'FornecedorController@update');
 
 # ----- AberturaController --------------------------------
 $route->get('abertura','AberturaController@index');

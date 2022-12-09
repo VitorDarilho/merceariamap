@@ -114,12 +114,12 @@
                 <div class="row">
                     <div class="col-5 col-md-4">
                         <div class="icon-big text-center icon-warning">
-                            <i class="fas fa-user-tie" style="color:#212120"></i>
+                            <i class="fas fas fa-truck" style="color:#212120"></i>
                         </div>
                     </div>
                     <div class="col-7 col-md-8">
                         <div class="numbers">
-                            <p class="card-category" style="font-size:12px;">Clientes</p>
+                            <p class="card-category" style="font-size:12px;">Fornecedores</p>
                             <p class="card-title" style="font-size:15px">
                             Ativos: <?php echo $clientesCadastrados->ativos; ?><p>
                         </div>
@@ -129,8 +129,8 @@
             <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                    <i class="fas fa-user-tie" style="color:#048e6d"></i>
-                    <small>Clientes inativos <b><?php echo $clientesCadastrados->inativos; ?></b></small>
+                    <i class="fas fa-truck" style="color:#048e6d"></i>
+                    <small>Fornecedores inativos <b><?php echo $clientesCadastrados->inativos; ?></b></small>
                     </b></small>
                 </div>
             </div>

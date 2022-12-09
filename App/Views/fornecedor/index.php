@@ -1,6 +1,6 @@
 <!--Usando o Html Components-->
 <?php use System\HtmlComponents\Modal\Modal; ?>
-
+!
 <style type="text/css">
     .desativado {
         color: #cc0033;
@@ -11,10 +11,10 @@
 
     <div class="card col-lg-12 content-div">
         <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-truck"></i> Fornecedores</h5>
+            <h5 class="card-title"><i class="fas fa-user-tie"></i> Fornecedores</h5>
         </div>
 
-        <?php if (count($clientes) > 0): ?>
+        <?php if (is_countable($fornecedor)&& count($fornecedor) > 0): ?>
             <table id="example" class="table tabela-ajustada table-striped" style="width:100%">
                 <thead>
                 <tr>
@@ -24,34 +24,34 @@
                     <th>Ativo</th>
                     <th>Endereço</th>
                     <th style="text-align:right;padding-right:0">
-                        <?php $rota = BASEURL . '/cliente/modalFormulario'; ?>
-                        <button onclick="modalFormularioClientes('<?php echo $rota; ?>', false);"
-                                class="btn btn-sm btn-success" title="Novo Cliente">
+                        <?php $rota = BASEURL . '/fornecedor/modalFormulario'; ?>
+                        <button onclick="modalFormularioFornecedor('<?php echo $rota; ?>', false);"
+                                class="btn btn-sm btn-success" title="Novo Fornecedor">
                             <i class="fas fa-plus"></i>
                         </button>
                     </th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($clientes as $cliente): ?>
+                <?php foreach ($fornecedores as $fornecedor): ?>
                     <tr>
-                        <td><?php echo $cliente->nome; ?></td>
-                        <td class="hidden-when-mobile"><?php echo $cliente->cnpj; ?></td>
+                        <td><?php echo $fornecedor->nome; ?></td>
+                        <td class="hidden-when-mobile"><?php echo $fornecedor->cnpj; ?></td>
 
-                        <td><?php echo $cliente->segmento_fornecedor; ?></td>
+                        <td><?php echo $fornecedor->segmento_fornecedor; ?></td>
                         
 
-                        <td class="<?php echo (is_null($cliente->deleted_at)) ? 'ativo' : 'desativado'; ?>">
-                            <?php echo (is_null($cliente->deleted_at)) ? 'Sim' : 'Não'; ?>
+                        <td class="<?php echo (is_null($fornecedor->deleted_at)) ? 'ativo' : 'desativado'; ?>">
+                            <?php echo (is_null($fornecedor->deleted_at)) ? 'Sim' : 'Não'; ?>
                         </td>
 
                         <td>
                             <button title="Endereços" onclick="modalVisualizarEnderecos(
                                 '<?php echo BASEURL . "/clienteEndereco/modalVisualizarEnderecos"; ?>',
-                                '<?php echo in64($cliente->id); ?>',
-                                '<?php echo $cliente->nome; ?>'
+                                '<?php echo in64($fornecedor->id); ?>',
+                                '<?php echo $fornecedor->nome; ?>'
                                 )" class="btn btn-sm
-                                <?php if ($cliente->quantidadeEnderecos == 0):?>
+                                <?php if ($fornecedor->quantidadeEnderecos == 0):?>
                                    btn-danger
                                 <?php endif;?>">
                                 <i class="fas fa-map-marker-alt"></i>
@@ -70,21 +70,21 @@
                                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
 
                                     <button class="dropdown-item" href="#"
-                                            onclick="modalFormularioClientes('<?php echo $rota; ?>', '<?php echo $cliente->id; ?>')">
+                                            onclick="modalFormularioFornecedor('<?php echo $rota; ?>', '<?php echo $fornecedor->id; ?>')">
                                         <i class="fas fa-edit"></i> Editar
                                     </button>
 
-                                    <?php if (is_null($cliente->deleted_at)): ?>
+                                    <?php if (is_null($fornecedor->deleted_at)): ?>
 
                                         <button class="dropdown-item" href="#"
-                                                onclick="modalAtivarEdesativarCliente('<?php echo $cliente->id; ?>', '<?php echo $cliente->nome; ?>', 'desativar')">
+                                                onclick="modalAtivarEdesativarFornecedor('<?php echo $fornecedor->id; ?>', '<?php echo $fornecedor->nome; ?>', 'desativar')">
                                             <i class="fas fa-window-close"></i> Desativar
                                         </button>
 
                                     <?php else: ?>
 
                                         <button class="dropdown-item" href="#"
-                                                onclick="modalAtivarEdesativarCliente('<?php echo $cliente->id; ?>', '<?php echo $cliente->nome; ?>', 'ativar')">
+                                                onclick="modalAtivarEdesativarFornecedor('<?php echo $fornecedor->id; ?>', '<?php echo $fornecedor->nome; ?>', 'ativar')">
                                             <i class="fas fa-square"></i> Ativar
                                         </button>
 
@@ -101,13 +101,13 @@
         <?php else: ?>
             <center>
                 <i class="far fa-grin-beam" style="font-size:50px;opacity:0.60"></i> <br> <br>
-                Poxa, ainda não há nenhum Cliente cadastrado! <br>
-                <?php $rota = BASEURL . '/cliente/modalFormulario'; ?>
+                Poxa, ainda não há nenhum Fornecedor cadastrado! <br>
+                <?php $rota = BASEURL . '/fornecedor/modalFormulario'; ?>
                 <button
-                    onclick="modalFormularioClientes('<?php echo $rota; ?>', null);"
+                    onclick="modalFormularioFornecedor('<?php echo $rota; ?>', null);"
                     class="btn btn-sm btn-success">
                     <i class="fas fa-plus"></i>
-                    Cadastrar Cliente
+                    Cadastrar Fornecedor
                 </button>
             </center>
         <?php endif; ?>
@@ -119,7 +119,7 @@
 
 <!--Modal Clientes-->
 <?php Modal::start([
-    'id' => 'modalClientes',
+    'id' => 'modalFornecedor',
     'width' => 'modal-lg',
     'title' => 'Cadastrar Fornecedores'
 ]); ?>
@@ -128,12 +128,12 @@
 
 <!--Modal Desativar e ativar Clientes-->
 <?php Modal::start([
-    'id' => 'modalDesativarCliente',
+    'id' => 'modalDesativarFornecedor',
     'width' => 'modal-sm',
     'title' => '<i class="fas fa-user-tie" style="color:#ad54da"></i>'
 ]); ?>
 <div id="modalConteudo">
-    <p id="nomeCliente"></p>
+    <p id="nomeFornecedor"></p>
 
     <center>
         <set-modal-button class="set-modal-button"></set-modal-button>
@@ -163,7 +163,7 @@
 <?php Modal::stop(); ?>
 
 <script>
-    function modalFormularioClientes(rota, id) {
+    function modalFormularioFornecedor(rota, id) {
         var url = "";
 
         if (id) {
@@ -173,32 +173,32 @@
         }
 
         $("#formulario").html("<center><h3>Carregando...</h3></center>");
-        $("#modalClientes").modal({backdrop: 'static'});
+        $("#modalFornecedor").modal({backdrop: 'static'});
         $("#formulario").load(url);
     }
 
-    function modalVisualizarEnderecos(rota, idCliente, nomeCliente) {
+    function modalVisualizarEnderecos(rota, idFornecedor, nomeFornecedor) {
         var url = "";
 
-        if (idCliente) {
-            url = rota + "/" + idCliente;
+        if (idFornecedor) {
+            url = rota + "/" + idFornecedor;
         } else {
             url = rota;
         }
 
         $("#containerModalVisualizarEnderecos").html("<center><h3>Carregando...</h3></center>");
         $("#modalVisualizarEnderecos").modal({backdrop: 'static'});
-        $("#modalVisualizarEnderecos .modal-title").html("<b>" + nomeCliente + "</b>");
+        $("#modalVisualizarEnderecos .modal-title").html("<b>" + nomeFornecedor + "</b>");
         $("#containerModalVisualizarEnderecos").load(url);
     }
 
-    function modalFormularioEndereco(rota, idCliente, id) {
+    function modalFormularioEndereco(rota, idFornecedor, id) {
         var url = "";
 
         if (id) {
-            url = rota + "/" + idCliente + "/" + id;
+            url = rota + "/" + idFornecedor + "/" + id;
         } else {
-            url = rota + "/" + idCliente;
+            url = rota + "/" + idFornecedor;
         }
 
         $("#modalEnderecoFormulario").html("<center><h3>Carregando...</h3></center>");
@@ -207,25 +207,25 @@
         $("#modalEnderecoFormulario").load(url);
     }
 
-    function modalAtivarEdesativarCliente(id, nome, operacao) {
+    function modalAtivarEdesativarFornecedor(id, nome, operacao) {
         if (operacao == 'desativar') {
-            $("#nomeCliente").html('Tem certeza que deseja desativar o cliente ' + nome + '?');
-            $("set-modal-button").html('<button class="btn btn-sm btn-success" id="buttonDesativarCliente" data-id-cliente="" onclick="desativarCliente(this)"><i class="far fa-check-circle"></i> Sim</button>');
+            $("#nomeFornecedor").html('Tem certeza que deseja desativar o fornecedor ' + nome + '?');
+            $("set-modal-button").html('<button class="btn btn-sm btn-success" id="buttonDesativarFornecedor" data-id-cliente="" onclick="desativarFornecedor(this)"><i class="far fa-check-circle"></i> Sim</button>');
 
         } else if (operacao == 'ativar') {
-            $("set-modal-button").html('<button class="btn btn-sm btn-success" id="buttonDesativarCliente" data-id-cliente="" onclick="ativarCliente(this)"><i class="far fa-check-circle"></i> Sim</button>');
-            $("#nomeCliente").html('Você deseja ativar o cliente ' + nome + '?');
+            $("set-modal-button").html('<button class="btn btn-sm btn-success" id="buttonDesativarFornecedor" data-id-cliente="" onclick="ativarFornecedor(this)"><i class="far fa-check-circle"></i> Sim</button>');
+            $("#nomeFornecedor").html('Você deseja ativar o fornecedor ' + nome + '?');
         }
 
-        $("#modalDesativarCliente").modal({backdrop: 'static'});
-        document.querySelector("#buttonDesativarCliente").dataset.idCliente = id;
+        $("#modalDesativarFornecedor").modal({backdrop: 'static'});
+        document.querySelector("#buttonDesativarFornecedor").dataset.idFornecedor = id;
     }
 
-    function desativarCliente(elemento) {
-        modalValidacao('Validação', 'Desativando Cliente...');
+    function desativarFornecedor(elemento) {
+        modalValidacao('Validação', 'Desativando Fornecedor...');
         id = elemento.dataset.idCliente;
 
-        var rota = getDomain() + "/cliente/desativarCliente/" + id;
+        var rota = getDomain() + "/cliente/desativarFornecedor/" + id;
         $.get(rota, function (data, status) {
             var dados = JSON.parse(data);
             if (dados.status == true) {
@@ -235,11 +235,11 @@
         });
     }
 
-    function ativarCliente(elemento) {
-        modalValidacao('Validação', 'Ativando Cliente...');
-        id = elemento.dataset.idCliente;
+    function ativarFornecedor(elemento) {
+        modalValidacao('Validação', 'Ativando Fornecedor...');
+        id = elemento.dataset.idFornecedor;
 
-        var rota = getDomain() + "/cliente/ativarCliente/" + id;
+        var rota = getDomain() + "/cliente/ativarFornecedor/" + id;
         $.get(rota, function (data, status) {
             var dados = JSON.parse(data);
             if (dados.status == true) {
