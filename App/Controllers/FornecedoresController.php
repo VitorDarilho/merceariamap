@@ -46,7 +46,7 @@ class FornecedoresController extends Controller
     {
        
         $fornecedores = new Fornecedores();
-        $fornecedoress = $fornecedores->fornecedores();
+        #$fornecedoress = $fornecedores->fornecedores();
         
         #$informacoes = $produto->informacaoesGeraisDosProdutos($this->idEmpresa);
 
@@ -57,7 +57,7 @@ class FornecedoresController extends Controller
     public function save()
     {   
         $fornecedores = new Fornecedores();
-        $dados = (array) $this->post->only(
+        $dados = (array) $this->post->data(
             ['nome_fornecedor','cnpj_fornecedor','endereco_fornecedor', 'segmento_fornecedor', 'telefone_fornecedor']);
         #dd($dados);
         try {
@@ -74,7 +74,7 @@ class FornecedoresController extends Controller
     {
         $fornecedores = new Fornecedores();
         $dados = $fornecedores->find($this->post->data()->id);
-        $dados = (array)$this->post->only([
+        $dados = (array)$this->post->data([
             'nome_fornecedor','cnpj_fornecedor','endereco_fornecedor', 'segmento_fornecedor', 'telefone_fornecedor'
         ]);
 

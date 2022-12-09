@@ -49,8 +49,8 @@ use System\Session\Session;
             <a href="<?php echo BASEURL; ?>/cliente"
                class="<?php currentRouteFromMenu('cliente', 'clienteBorder'); ?>
           <?php currentRouteFromMenu('clienteEndereco', 'clienteBorder'); ?>">
-                <i class="fas fa-user-tie"></i>
-                <p>Clientes</p>
+                <i class="fas fa-truck"></i>
+                <p>Fornecedores</p>
             </a>
 
         </li>
@@ -59,7 +59,7 @@ use System\Session\Session;
             <a href="<?php echo BASEURL; ?>/fornecedores"
                class="<?php currentRouteFromMenu('fornecedores'); ?>">
                 <i class="fas fa-truck"></i>
-                <p>Fornecedores</p>
+                <p>Fornecedores(inativo)</p>
             </a>
         </li>
 

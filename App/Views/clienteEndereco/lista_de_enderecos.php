@@ -57,7 +57,7 @@
 <?php else: ?>
     <center>
         <i class="far fa-grin-beam" style="font-size:50px;opacity:0.60"></i> <br> <br>
-        Poxa, ainda não há endereços cadastrados para este Cliente! <br>
+        Poxa, ainda não há endereços cadastrados para este Fornecedor! <br>
         <?php $rota = BASEURL . '/clienteEndereco/modalFormulario'; ?>
         <button
             onclick="modalFormularioEndereco('<?php echo $rota; ?>', <?php echo $cliente->id; ?>, null);"

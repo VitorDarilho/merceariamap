@@ -16,10 +16,8 @@ class Cliente extends Model
 
     public function clientes($idEmpresa)
     {
-        return $this->query("SELECT(
-            SELECT COUNT(*) FROM clientes_enderecos WHERE id_cliente = cl.id
-            ) AS quantidadeEnderecos,
-            cl.id, cl.nome, cl.email, cl.cnpj, cl.cpf, cl.telefone, cl.celular, cl.deleted_at,
+        return $this->query("SELECT(SELECT COUNT(*) FROM clientes_enderecos WHERE id_cliente = cl.id) AS quantidadeEnderecos,
+            cl.id, cl.nome, cl.email, cl.cnpj, cl.cpf, cl.telefone, cl.celular, cl.deleted_at, cl.segmento_fornecedor, 
             cs.id AS idSegmento, cs.descricao AS descricaoSegmento,
             ct.id AS idClienteTipo, ct.descricao AS descricaoClienteTipo
             FROM clientes AS cl

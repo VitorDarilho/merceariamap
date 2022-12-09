@@ -67,7 +67,7 @@ class ClienteController extends Controller
         $dadosCliente = $cliente->find($this->post->data()->id);
         $dados = (array)$this->post->only([
             'id_cliente_tipo', 'id_cliente_segmento',
-            'nome', 'email', 'cnpj', 'cpf', 'telefone', 'celular'
+            'nome', 'email', 'cnpj', 'cpf', 'telefone', 'celular', 'segmento_fornecedor'
         ]);
 
         $dados['id_empresa'] = $this->idEmpresa;

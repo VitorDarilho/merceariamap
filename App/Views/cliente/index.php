@@ -11,16 +11,16 @@
 
     <div class="card col-lg-12 content-div">
         <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-user-tie"></i> Clientes</h5>
+            <h5 class="card-title"><i class="fas fa-user-tie"></i> Fornecedores</h5>
         </div>
 
         <?php if (count($clientes) > 0): ?>
             <table id="example" class="table tabela-ajustada table-striped" style="width:100%">
                 <thead>
                 <tr>
-                    <th>Nome</th>
-                    <th class="hidden-when-mobile">Tipo</th>
-                    <th class="hidden-when-mobile">CPF</th>
+                    <th>Fornecedor</th>
+                    <th class="hidden-when-mobile">CNPJ</th>
+                    <th class="hidden-when-mobile">Segmento</th>
                     <th>Ativo</th>
                     <th>Endereço</th>
                     <th style="text-align:right;padding-right:0">
@@ -36,14 +36,10 @@
                 <?php foreach ($clientes as $cliente): ?>
                     <tr>
                         <td><?php echo $cliente->nome; ?></td>
-                        <td class="hidden-when-mobile"><?php echo $cliente->descricaoClienteTipo; ?></td>
+                        <td class="hidden-when-mobile"><?php echo $cliente->cnpj; ?></td>
 
-                        <td class="hidden-when-mobile">
-                            <?php
-                            echo !is_null($cliente->descricaoSegmento) ?
-                                $cliente->descricaoSegmento : "<small>Não consta</small>";
-                            ?>
-                        </td>
+                        <td><?php echo $cliente->segmento_fornecedor; ?></td>
+                        
 
                         <td class="<?php echo (is_null($cliente->deleted_at)) ? 'ativo' : 'desativado'; ?>">
                             <?php echo (is_null($cliente->deleted_at)) ? 'Sim' : 'Não'; ?>
@@ -125,7 +121,7 @@
 <?php Modal::start([
     'id' => 'modalClientes',
     'width' => 'modal-lg',
-    'title' => 'Cadastrar Clientes'
+    'title' => 'Cadastrar Fornecedores'
 ]); ?>
 <div id="formulario"></div>
 <?php Modal::stop(); ?>

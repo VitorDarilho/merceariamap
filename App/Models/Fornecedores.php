@@ -12,18 +12,6 @@ class Fornecedores extends Model
     {
         parent::__construct();
     }
-
-    public function fornecedores()
-    {
-        return $this->query("SELECT nome_fornecedor,cnpj_fornecedor,endereco_fornecedor, 
-        segmento_fornecedor, telefone_fornecedor FROM fornecedores");
-    }
-
-
-
-
-
-
    
     public function getBy(int $idEmpresa, string $column = null, $value = null)
     {

@@ -26,14 +26,11 @@ use System\HtmlComponents\Modal\Modal;
         </tr>
         </thead>
         <tbody>
-        <?php foreach ($fornecedores as $fornecedoress): ?>
+        <?php foreach ($fornecedores as $fornecedores): ?>
             <tr>
             <td>
-                <?php echo $fornecedores->$nome_fornecedor; ?>
+                <?php echo $fornecedoress->$nome_fornecedor; ?>
 
-                <td>
-                    <?php echo $cnpj_fornecedor->cnpj_fornecedor; ?>
-                </td>
             </td>
         </tr>
         <?php endforeach;?>

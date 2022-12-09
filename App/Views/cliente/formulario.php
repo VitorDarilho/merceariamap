@@ -28,6 +28,14 @@
 
         <div class="col-md-4">
             <div class="form-group">
+                <label for="nome">Segmento</label>
+                <input type="text" class="form-control" name="segmento_fornecedor" id="segmento_fornecedor" placeholder="Digite aqui..."
+                       value="<?php #echo isset($cliente->id) ? $cliente->nome : '' ?>">
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
                 <label for="email">E-mail * <span class="label-email"></span></label>
                 <input type="text" class="form-control" name="email" id="email" placeholder="Digite o e-mail!"
                        value="<?php echo isset($cliente->id) ? $cliente->email : '' ?>"
@@ -174,11 +182,7 @@
             modalValidacao('Validação', 'Campo (CNPJ) deve ser preenchido!');
             return false;
 
-        } else if (idClienteTipo.val() == 2 && !CNPJvalido($('#cnpj').val())) {
-            modalValidacao('Validação', 'Digite um (CNPJ) valido!');
-            return false;
-
-        }
+        } 
 
         return true;
     }

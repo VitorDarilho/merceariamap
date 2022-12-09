@@ -117,6 +117,22 @@
     </div>
 </div>
 
+<div class="card col-lg-13 content-div">
+        <div class="card-body">
+            <h5 class="card-title">
+                <?php iconFilter(); ?>
+                Relatório de caixa
+            </h5>
+
+            <a onclick="gerarCaixaPDF()" class="cool-btn btn btn-sm btn-defoult text-right pull-right"
+                       id="baixar-pdf" title="Baixar em formato PDF!">
+                        <i class="fas fa-cloud-download-alt"></i> PDF
+                    </a>
+        </div>
+
+
+
+
 <script src="<?php echo BASEURL; ?>/public/assets/js/core/jquery.min.js"></script>
 
 <script type="text/javascript">
@@ -153,4 +169,5 @@
 
         window.location.href = rota;
     }
+
 </script>
