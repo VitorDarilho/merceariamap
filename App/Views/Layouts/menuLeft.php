@@ -56,15 +56,6 @@ use System\Session\Session;
         </li>
 
         <li class="">
-            <a href="<?php echo BASEURL; ?>/fornecedores"
-               class="<?php currentRouteFromMenu('fornecedores'); ?>">
-                <i class="fas fa-truck"></i>
-                <p>Fornecedores(inativo)</p>
-            </a>
-        </li>
-
-
-        <li class="">
             <a href="<?php echo BASEURL; ?>/abertura"
                class="<?php currentRouteFromMenu('abertura'); ?>">
                 <i class="fas fa-money-bill"></i>

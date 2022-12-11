@@ -207,22 +207,6 @@ class UsuarioController extends Controller
         }
     }
 
-    public function testeEmail()
-    {
-        $sendEmail = new SendEmail();
-        $sendEmail->setFrom("contato@tonie.com.br");
-        $sendEmail->setTo("valdiney.2@hotmail.com");
-        $sendEmail->setSubject("Bem vindo - Confirmação de cadastro");
-
-        $mensagem = "<b>Valdiney</b>,
-    sejá bem vindo ao sistema <b>Tonie.</b>
-    Você foi cadastrado por <b>João Batista</b>";
-
-        $sendEmail->setBody(SimpleTemplate::template($mensagem));
-
-        dd($sendEmail->send());
-    }
-
     function desativarUsuario($idUsuario)
     {
         $cliente = new Usuario();
